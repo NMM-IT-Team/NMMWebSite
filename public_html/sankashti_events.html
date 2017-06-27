@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Nebraska Marathi Mandal</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body onload="setCurrentSankashti()">
+
+        <!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="color:#f46842" href="index.html">नेब्रास्का मराठी मंडळ</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">                    
+                    <!--<li>
+                        <a href="services.html">Services</a>
+                    </li> 
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="portfolio-1-col.html">1 Column Portfolio</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-2-col.html">2 Column Portfolio</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-3-col.html">3 Column Portfolio</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-4-col.html">4 Column Portfolio</a>
+                            </li>
+                            <li>
+                                <a href="portfolio-item.html">Single Portfolio Item</a>
+                            </li>
+                        </ul>
+                    </li> 
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="full-width.html">Full Width Page</a>
+                            </li>
+                            <li>
+                                <a href="sidebar.html">Sidebar Page</a>
+                            </li>
+                            <li>
+                                <a href="faq.html">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="404.html">404</a>
+                            </li>
+                            <li>
+                                <a href="pricing.html">Pricing Table</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <li>
+                        <a href="membership.html">Membership</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="upcoming_events.html">Upcoming</a>
+                            </li>
+                            <li>
+                                <a href="past_events.html">Past</a>
+                            </li>  
+                             <li>
+                                <a href="sankashti_events.html">Sankashti Schedule</a>
+                            </li>                           
+                        </ul>
+                    </li> 
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About us <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="board_members.html">Board Members</a>
+                            </li>
+                            <!-- <li>
+                                <a href="faq.html">FAQs</a>
+                            </li> -->
+                        </ul>
+                    </li>                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">                
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li class="active">Sankashti Schedule</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+	<div class="container">
+	
+	<img class="img-responsive" src="./images/sankasthi_ganesh.jpg" alt="Sankashti schedule - २०१७"/>
+		<h1 class="page-header">Sankashti Schedule - २०१७</h1>
+	    <p>Many NMM members meet at The Hindu Temple of Nebraska to celebrate sankashti as per schedule shown below. Devotees perform bhajans, aartis and this<br>event ends with delicious prasad. This is one of the event which would enable parents to introduce their kids to the Maharashtrian culture and help strengthen<br> the cultural roots. Please feel free to attend and participate in this event.</p>
+	
+	    
+	    </hr>
+	    
+ 	    <div class="table-responsive">          
+		<table class="table table-condensed" id="sankashti-schedule">
+		        <thead>
+		            <tr>
+		        	<th>दिनांक</th>
+			        <th>वार - वेळ</th>
+		        	<th>चतुर्थी</th>
+			    </tr>
+	 	        </thead>
+
+		    	<tbody>
+				<tr id="mth1" sdate="15">	        
+				    <td>१५ जानेवारी</td>
+				    <td>रविवार - संध्याकाळी ६:००  </td>
+				    <td>संकष्टी</td>
+				</tr>
+			        <tr id="mth2" sdate="13">
+				    <td>१३ फेब्रूवारी</td>
+				    <td>सोमवार - संध्याकाळी ६:०० </td>
+				    <td>संकष्टी</td>
+				</tr>
+			        <tr id="mth3" sdate="15">
+				    <td>१५ मार्च</td>
+				    <td>बुधवार - संध्याकाळी ६:०० </td>
+				    <td>संकष्टी</td>
+				</tr>
+			        <tr id="mth4" sdate="14">
+				    <td>१४ एप्रिल</td>
+				    <td>शुक्रवार - संध्याकाळी ६:०० </td>
+				    <td>संकष्टी</td>
+				</tr>
+			        <tr id="mth5" sdate="14">
+				    <td>१४ मे</td>
+				    <td>रविवार - संध्याकाळी ६:०० </td>
+				    <td>संकष्टी</td>
+				</tr>
+			        <tr id="mth6" sdate="12">
+				    <td>१२ जून</td>
+				    <td>सोमवार - संध्याकाळी ६:०० </td>
+				    <td>संकष्टी</td>
+				</tr>
+			        <tr id="mth7" sdate="12">	        
+				    <td>१२ जुलै</td>
+				    <td>बुधवार - संध्याकाळी ६:०० </td>
+				    <td>संकष्टी</td>
+				</tr>
+			        <tr id="mth8" sdate="10">
+				    <td>१० ऑगस्ट</td>
+				    <td>गुरुवार - संध्याकाळी ६:०० </td>
+				    <td>संकष्टी</td>
+				</tr>
+			        <tr id="mth9" sdate="9">
+				    <td>०९ सप्टेंबर</td>
+				    <td>शनिवार - संध्याकाळी ६:०० </td>
+				    <td>संकष्टी</td>
+				</tr>
+				<tr id="mth10" sdate="8">
+				    <td>०८ ऑक्टोबर</td>
+				    <td>रविवार - संध्याकाळी ६:०० </td>
+				    <td>संकष्टी</td>
+				</tr>
+				<tr id="mth11" sdate="6">
+				    <td>०६ नोव्हेंबर</td>
+				    <td>सोमवार - संध्याकाळी ६:०० </td>
+				    <td>संकष्टी</td>
+				</tr>
+				<tr id="mth12" sdate="6">
+				    <td>०६ डिसेंबर</td>
+				    <td>बुधवार - संध्याकाळी ६:०० </td>
+				    <td>संकष्टी</td>
+				</tr>																
+		    	</tbody>
+		  </table>
+	  </div>
+	</div>
+
+        <hr>
+        
+        <h1 class="page-header">Aarti (आरती संग्रह) </h1>
+        <ul class="nav nav-pills">
+	  <li class="active"><a data-toggle="pill" href="#home">श्री गणपती</a></li>
+	  <li><a data-toggle="pill" href="#menu1">श्री शंकर</a></li>
+	  <li><a data-toggle="pill" href="#menu2">श्री दत्तगुरू</a></li>
+	  <li><a data-toggle="pill" href="#menu3">श्री देवी</a></li>
+  	  <li><a data-toggle="pill" href="#menu4">श्री विठ्ठल</a></li>
+	  <li><a data-toggle="pill" href="#menu5">प्रार्थना</a></li>
+	  
+	</ul>
+	
+	<div class="tab-content">
+	  <div id="home" class="tab-pane fade in active">
+	    <div class="panel panel-default">
+	    	<div class="panel-heading"><h3>श्री गणपतीची आरती</h3></div>
+		   <div class="panel-body">
+			सुखकर्ता दुखहर्ता वार्ता विघ्नाची | <br>
+			नुरवी पूर्वी प्रेम कृपा जयाची | <br>
+			सर्वांगी सुंदर उटी शेंदुराची | <br>
+			कंठी झळके माळ मुक्ताफळाची || १ || <br><br>
+			
+			जय देव जय देव जय मंगलमूर्ती | <br>
+			दर्शनमात्रे मनकामना पुरती ||
+			<hr> 
+			रत्नखचित फरा तूज गौरीकुमरा | <br>
+			चंदनाची उटी कुंकुमकेशरा | <br>
+			हिरे जडित मुकुट शोभतो बरा | <br>
+			रुणझुणती नुपुरे चरणी घागरिया || २ || <br><br>
+			
+			जय देव जय देव जय मंगलमूर्ती | <br>
+			दर्शनमात्रे मनकामना पुरती ||
+			<hr> 
+			लंबोदर पितांबर फणीवर वंदना | <br>
+			सरळ सोंड वक्रतुंड त्रिनयना | <br>
+			दास रामाचा वाट पाहे सदना | <br>
+			संकटी पावावे निर्वाणी रक्षावे सुरवंदना | <br><br>
+			
+			जय देव जय देव जय मंगलमूर्ती | <br>
+			दर्शनमात्रे मनकामना पुरती || ३ ||
+		   </div>
+	     	</div>
+	  </div>
+	  <div id="menu1" class="tab-pane fade">
+	   <div class="panel panel-default">
+	    <div class="panel-heading"><h3>श्री शंकराची आरती</h3></div>
+		<div class="panel-body">
+			लवथवती विक्राळा ब्रह्माण्डी माळा ।   <br>
+			वीषे कण्ठ काळा त्रिने त्रीज्वाळा ।   <br>
+			लावण्य सुन्दर मस्तकी बाळा ।   <br>
+			तेथुनिया जळ निर्मळ वाहे झुळझुळा || १ || <br><br>
+
+			जय देव जय देव जय श्रीशंकरा ।   <br>
+			आरती ओवाळू तुज कर्पुरगौरा ||    
+			<hr>
+			   
+			कर्पुर्गौरा भोळा नयनी विशाळा।   <br>
+			अर्धांगी पार्वती सुमनांच्या माळा।   <br>
+			विभुतीचे उधळण शितिकण्ठ नीळा।   <br>
+			ऐसा शंकर शोभे उमावेल्हाळा || २ ||   <br><br>
+
+			जय देव जय देव जय श्रीशंकरा ।   <br>
+			आरती ओवाळू तुज कर्पुरगौरा ||    
+			<hr>
+
+			देवी दैत्यी सागरमन्थन पै केलें।   <br>
+			त्यामाजी अवचित हळाहळ जें उठिले।   <br>
+			ते त्वां असुरपणे प्राशन केलें।   <br>
+			नीलकण्ठ नाम प्रसिद्ध झालें || ३ ||  <br><br>
+
+			जय देव जय देव जय श्रीशंकरा ।   <br>
+			आरती ओवाळू तुज कर्पुरगौरा ||    
+			<hr>
+
+			व्याघ्राम्बर फणिवरधर सुन्दर मदनारी।   <br>
+			पंचानन मनमोहन मुनिजन सुखकारी।   <br>
+			शतकोटीचें बीज वाचे उच्चारी।   <br>
+			रघुकुळटिळक रामदासा अन्तरी || ४ || <br><br>
+			
+			जय देव जय देव जय श्रीशंकरा ।   <br>
+			आरती ओवाळू तुज कर्पुरगौरा ||    
+		</div> <!-- panel body -->
+	     </div> <!-- panel default -->
+	  </div> <!-- pane fade -->
+	  <div id="menu2" class="tab-pane fade">	    
+	    <div class="panel panel-default">
+	    <div class="panel-heading"><h3>श्री दत्तगुरूची आरती</h3></div>
+		<div class="panel-body">
+			त्रिगुणात्मक त्रैमूर्ती दत्त हा जाणा   <br>
+			त्रिगुणी अवतार त्रैलोक्य राणा   <br>
+			नेति नेति शब्द न ये अनुमाना   <br>
+			सुरवर मुनिजन योगी समाधी न ये ध्याना ॥१॥   <br><br>
+			
+			जय  देव  जय  देव  जय  श्रीगुरुदत्त  || <br>
+			आरती ओवाळितां  हरली  भवचिंता  जय  देव  जय  देव  ||
+			<hr>
+			
+			सबाह्य अभ्यंतरी तू एक दत्त   <br>
+			अभाग्यासी कैसी न कळे ही मात   <br>
+			पराही परतली तेथे कैचा हा हेत   <br>
+			जन्म मरणाचा पुरलासे अंत ॥२॥   <br><br>
+			
+			जय  देव  जय  देव  जय  श्रीगुरुदत्त  || <br>
+			आरती ओवाळितां  हरली  भवचिंता  जय देव जय देव  ||
+			<hr>
+			
+			दत्त येऊनिया उभा ठाकला   <br>
+			भावे साष्टांगेसी प्रणिपात केला   <br>
+			प्रसन्न होउनी आशीर्वाद दिधला   <br>
+			जन्ममरणाचा फेरा चुकविला ॥३॥   <br><br>
+			
+			जय  देव  जय  देव  जय  श्रीगुरुदत्त  || <br>
+			आरती ओवाळितां  हरली  भवचिंता  जय देव जय देव  ||
+			<hr>
+			
+			दत्त दत्त ऐसे लागले ध्यान   <br>
+			हरपले मन झाले उन्मन   <br>
+			मी तू पणाची झाली बोळवण   <br>
+			एका जनार्दनी श्रीदत्त ध्यान ॥४॥   <br>
+			
+			जय  देव  जय  देव  जय  श्रीगुरुदत्त  || <br>
+			आरती ओवाळितां  हरली  भवचिंता  जय देव जय देव  ||			
+
+		</div> <!-- panel body -->
+	     </div> <!-- panel default -->	    
+	  </div>
+	  <div id="menu3" class="tab-pane fade">
+	    <div class="panel panel-default">
+	    	<div class="panel-heading"><h3>श्री देवीची आरती</h3></div>
+		    <div class="panel-body">
+		    	दुर्गे दुर्घट भारी तुजवीण संसारी  |<br>
+			अनाथ नाथे अंबे करुणा विस्तारी  |<br>
+			वारी वारी जन्म मरण तेवारी  |<br>
+			हारी पडलो आता संकट नेवारी || १ || <br><br>
+			
+			जय देवी जय देवी जय महिषासुर मर्दिनी  |<br>
+			सुरवर ईश्वर वरदे तारक संजीवनी  |<br>
+			जय देवी जय देवी |<br>
+			<hr>
+			
+			त्रिभुवनी भुवनी पाहत तुज ऐसे नाही  |<br>
+			चारी श्रमले परंतु न बोलवे काही  |<br>
+			साही विवाद करिता पडिलो प्रवाही  |<br>
+			ते तू भक्ता लागे ते तू दस लागे पावस लवलाही || २ ||<br><br>
+			
+			जय देवी जय देवी जय महिषासुर मर्दिनी  |<br>
+			सुरवर ईश्वर वरदे तारक संजीवनी  |<br>
+			जय देवी जय देवी |<br>
+			<hr>
+			
+			प्रसन्न वदने प्रसन्न होशी निजदासा  |<br>
+			क्लेशांपासून तोडी होई भोपाषा  |<br>
+			आंबे तुजवाचून कोण पुरवी आशा  |<br>
+			नरहर तल्लीन झाला पद पंकज लेशा  || ३ ||<br><br>
+			
+			जय देवी जय देवी जय महिषासुर मर्दिनी  |<br>
+			सुरवर ईश्वर वरदे तारक संजीवनी  |<br>
+			जय देवी जय देवी |<br>
+		    </div> <!-- panel-body -->
+	    </div> <!-- panel-default-->
+	  </div> <!-- pane fade -->
+	  <div id="menu4" class="tab-pane fade">
+	    
+	    <div class="panel panel-default">
+	    	<div class="panel-heading"><h3>श्री विठ्ठलाची आरती</h3></div>	    	
+		    <div class="panel-body">
+		    	युगें अठ्ठावीस विटेवरी उभा।  <br>
+			वामांगी रखुमाई दिसे दिव्य शोभा। <br>
+			पुण्डलिकाचे भेटी परब्रह्म आलें गा। <br>
+			चरणी वाहे भीमा उद्धरी जगा || १ || <br><br>
+			
+			जय देव जय देव जय पाण्डुरंगा। <br>
+			रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥  <br>
+			<hr> 
+			तुळसीमाळा गळां कर ठेवुनि कटीं। <br>
+			कांसे पीताम्बर कस्तुरि लल्लाटी। <br>
+			देव सुरवर नित्य येती भेटी। <br>
+			गरुड हनुमन्त पुढे उभे राहती  || २ || <br><br>
+			
+			जय देव जय देव जय पाण्डुरंगा। <br>
+			रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥ <br>
+			<hr> 
+			धन्य वेणुनाद अनुक्षेत्रपाळा। <br>
+			सुवर्णाची कमळे वनमाळा गळां। <br>
+			राही रखुमाबाई राणीया सकळा। <br>
+			ओवाळिती राजा विठोबा सांवळा || ३ || <br><br>
+			
+			जय देव जय देव जय पाण्डुरंगा। <br>
+			रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥ <br>
+			<hr> 
+			ओवाळूं आरत्या कुर्वण्ड्या येती। <br>
+			चन्द्रभागेमाजी सोडुनियां देती। <br>
+			दिंड्या पताका वैष्णव नाचती। <br>
+			पंढरीचा महिमा वर्णावा किती || ४ || <br><br>
+			
+			जय देव जय देव जय पाण्डुरंगा। <br>
+			रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥ <br>
+			<hr>
+			
+			आषाढी कार्तिकी भक्तजन येती। <br>
+			चन्द्रभागेमाजी स्नाने जे करिती। <br>
+			दर्शनहेळामात्रें तयां होय मुक्ती। <br>
+			केशवासी नामदेव भावे ओंवाळिती || ५ || <br><br>
+			
+			जय देव जय देव जय पाण्डुरंगा। <br>
+			रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥ 
+		    </div> <!-- panel-body -->
+            </div> <!-- panel-default-->
+	  </div>
+	  <div id="menu5" class="tab-pane fade">	    
+	    <div class="panel panel-default">
+	    	<div class="panel-heading"><h3>प्रार्थना</h3></div>	    	
+		    <div class="panel-body">
+		    	घालीन लोटांगण, वंदीन चरण ।  <br>
+			डोळ्यांनी पाहीन रुप तुझें । <br>
+			प्रेमें आलिंगन, आनंदे पूजिन । <br>
+			भावें ओवाळीन म्हणे नामा ।।१।।  <br>
+			 <hr>
+			त्वमेव माता च पिता त्वमेव। <br>
+			त्वमेव बंधुक्ष्च सखा त्वमेव । <br>
+			त्वमेव विध्या द्रविणं त्वमेव । <br>
+			त्वमेव सर्वं मम देवदेव।।२।। <br>
+			 <hr>
+			कायेन वाचा मनसेंद्रीयेव्रा, बुद्धयात्मना वा प्रकृतिस्वभावात । <br>
+			करोमि यध्य्त सकलं परस्मे, नारायणायेति समर्पयामि ।।३।। <br>
+			 <hr>
+			अच्युतं केशवं रामनारायणं कृष्णदामोदरं वासुदेवं हरिम। <br>
+			श्रीधरं माधवं गोपिकावल्लभं, जानकीनायकं रामचंद्र भजे ।।४।। <br>
+			 <hr>
+			हरे राम हर राम, राम राम हरे हरे । <br>
+			हरे कृष्ण हरे कृष्ण, कृष्ण कृष्ण हरे हरे । <br>
+		    </div> <!-- panel-body -->
+            </div> <!-- panel-default-->
+	  </div>
+	</div>
+	        
+        
+        
+        
+        
+        <h1 class="page-header">Event location</h1>
+	<div class="row">
+            <!-- Map Column -->
+            <div class="col-md-8">
+                <!-- Embedded Google Map -->
+                <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.317330659879!2d-96.11856348441351!3d41.23664511328904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8793f3ac8859c735%3A0x387fd4f5d4ccbf96!2sHindu+Temple!5e0!3m2!1sen!2sus!4v1492236004849"></iframe>                
+            </div>
+            <!-- Contact Details Column -->
+            <div class="col-md-4">
+                <h3>The Hindu Temple of Nebraska</h3>
+                <p>
+                    13010 Arbor St, Omaha, NE 68144<br>
+                </p>                
+            </div>
+        </div>	
+	
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; NMM 2017</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/sankashti.js"></script>
+
+</body>
+
+</html>
