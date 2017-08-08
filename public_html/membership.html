@@ -95,8 +95,8 @@
 
             <h1 class="page-header">Types of Membership</h1>
                 <ul class="nav nav-pills">
-                    <li class="active"><a data-toggle="pill" href="#home">Basic</a></li>
-                    <li><a data-toggle="pill" href="#menu1">Annual</a></li>                      
+                    <li class="active"><a data-toggle="pill" href="#home">Basic (Events excluded)</a></li>
+                    <li><a data-toggle="pill" href="#menu1">Full Package (Events included)</a></li>                      
                 </ul>
                 <div class="tab-content">
                     <div id="home" class="tab-pane fade in active">
@@ -178,9 +178,9 @@
                     </div>
                     <div id="menu1" class="tab-pane fade">
                         <div class="panel panel-default">
-                            <div class="panel-heading"><h3>Annual Membership</h3></div>
+                            <div class="panel-heading"><h3>Full Package Membership</h3></div>
                             <div class="panel-body">
-                                <p style="margin-left:17px"><strong>Annual membership</strong> includes all the NMM events. No fee is charged for participation of events conducted throughout the year. The meals, if any, are included in the membership.</p>
+                                <p style="margin-left:17px"><strong>Full Package Membership</strong> is an annual membership and includes all the NMM events conducted throughout the year. No fee is charged for participation of events. The meals, if any, are included in the membership.</p>
                                 <div class="col-md-4">
                                     <div class="panel panel-primary text-center">
                                         <div class="panel-heading">
@@ -256,14 +256,9 @@
 
         </div> <!-- row -->
             <!-- Footer -->
-            <footer>
-			    <p><img src="./images/gogreen2.jpg"></p>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p>Copyright &copy; NMM 2017</p>
-                    </div>
-                </div>
-            </footer>
+            <div id="footer">
+                
+            </div>
 
         </div>
         <!-- /.container -->
@@ -275,10 +270,12 @@
         <script src="js/bootstrap.min.js"></script>
 
         <script>
-            $(document).ready(function () {
-                $('#topmenu').load("header.html");
-            });
-        </script>
+        $( document ).ready(function() {    
+            $('#topmenu').load("header.html");
+            $('#footer').load("footer.html");
+        });                    
+        
+    </script>
 
 </body>
 
