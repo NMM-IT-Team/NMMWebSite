@@ -152,8 +152,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                                <div class="col-md-4">                                    
+                                    <!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                                         <input type="hidden" name="cmd" value="_s-xclick">
                                         <input type="hidden" name="on0" value="Basic Membership">
                                         <div class="form-group">
@@ -166,12 +166,12 @@
                                                 </select>
                                                 </br>
                                                 <button type="submit" name="submit" class="btn btn-success" alt="PayPal - The safer, easier way to pay online!">Submit via PayPal</button> 
-                                            </div>  <!--dropdown-->
+                                            </div>
                                                                                         
                                             <input type="hidden" name="currency_code" value="USD">
                                             <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
-                                        </div> <!--form-group-->
-                                    </form>
+                                        </div> 
+                                    </form> -->
                                 </div>  <!--col-md-4-->
                             </div> <!-- panel body -->
                         </div>
@@ -229,8 +229,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                                <div class="col-md-4">                                                                        
+                                    <!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                                         <input type="hidden" name="cmd" value="_s-xclick">
                                         <input type="hidden" name="on0" value="Annual Membership">
                                         <div class="form-group">
@@ -243,14 +243,21 @@
                                                 </select>
                                                 </br>
                                                 <button type="submit" name="submit" class="btn btn-success">Submit via PayPal</button>
-                                            </div>  <!--dropdown-->
+                                            </div> 
                                             <input type="hidden" name="currency_code" value="USD">
                                             <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
-                                        </div> <!--form-group-->
-                                    </form>
+                                        </div> 
+                                    </form> -->
                                 </div>  <!--col-md-4-->
-                            </div> <!-- panel body -->
+                            </div> <!-- panel body -->                            
                         </div>
+                    </div>
+                    <div class="col-md-12"> 
+                        <p>
+                        You can use the link                                        
+                        <a style="color:#f46842" target = "_blank" href="https://www.paypal.com/myaccount/transfer/send"><strong>Pay with PayPal</strong></a>                        
+                        to pay membership fee. Remember to use nebraskamarathimandal@gmail.com to make your membership payments.
+                        </p>
                     </div>
                 </div>    
 
