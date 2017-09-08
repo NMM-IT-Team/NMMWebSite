@@ -1,6 +1,6 @@
 <?php 
-$name = $_POST['username'];
-$comments = $_POST['comment'];
+echo $_POST['username'];
+echo $_POST['comment'];
 //$post = $_POST['submit'];
 $formcontent=" From: $name \n Message: $comments";
 //$subject = "Contact Form";
