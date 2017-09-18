@@ -120,13 +120,14 @@
             <hr>
 		    <p><i>"Congratulations to all..."-----Prasad Dandekar</p><br><br>			
 		    <p><i><b>Feedback:</b></p>
-	    <form action="./bin/comments.php"  method="POST">
+	    <form action="./comments.php"  method="POST">
             Name:   <input type="text" name="username"><br><br>
 			<!--Email:  <input type="email" name="email"><br><br>
 			Mobile: <input type="tel" name="mobile" maxlength="20" size="20"><br><br>-->
 			Comments:<br>
 			<textarea rows="5" cols="50" name="comment" style="font-family:sans-serif">Enter text here...</textarea><br><br>
-		    <input type="Submit" value="Submit" >
+			<div id="success"></div>
+		    <button type="submit" class="btn btn-primary">Submit</button>
 		</form>
 		
 		   </div>
