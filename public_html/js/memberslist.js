@@ -15,7 +15,7 @@ function loadmembers()
     $('.typeahead').typeahead({
         hint: true,
         highlight: true, /* Enable substring highlighting */
-        minLength: 4 /* Specify minimum characters required for showing result */
+        minLength: 1 /* Specify minimum characters required for showing result */
     },
     {
         name: 'members',
