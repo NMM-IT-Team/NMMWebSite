@@ -120,16 +120,18 @@
             <hr>
 		    <p><i>"Congratulations to all..."-----Prasad Dandekar</p><br><br>			
 		    <p><i><b>Feedback:</b></p>
-	    <form action="./comments.php"  method="POST" onSubmit="return validate();">
-            Name:   <input type="text" name="username"><br><br>
+	    <form name="myform" id="form" action="./bin/comments.php"  onsubmit="return validate()" method="POST" >
+		
+            Name:   <input type="text" name="name"><br><br>
 			<!--Email:  <input type="email" name="email"><br><br>
 			Mobile: <input type="tel" name="mobile" maxlength="20" size="20"><br><br>-->
-			Comments:<br>
-			<textarea rows="5" cols="50" name="comment" style="font-family:sans-serif">Enter text here...</textarea><br><br>
+			Message:<br>
+			<textarea rows="5" cols="50" name="message" style="font-family:sans-serif">Enter text here...</textarea><br><br>
 		    <div id="success"></div>
                     <!-- For success/fail messages -->
-            <input type="submit" value="Submit">
+            <button type="submit" class="btn btn-primary">Send Message</button>
 		</form>
+		
 		
 		   </div>
         </div>
@@ -162,8 +164,8 @@
 	 <!-- Comment Form JavaScript -->
     <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
     <script src="js/jqBootstrapValidation.js"></script>
-    <script>
-	</script>
+	<script src="js/comments.js"></script>
+    
 </body>
 
 </html>

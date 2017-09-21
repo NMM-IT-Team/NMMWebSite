@@ -1,146 +1,78 @@
-function validate()  
-{  
-//var uid = document.registration.userid;  
-//var passid = document.registration.passid;  
-var uname = document.registration.username;  
-//var uadd = document.registration.address;  
-//var ucountry = document.registration.country;  
-//var uzip = document.registration.zip;  
-//var uemail = document.registration.email;  
-//var umsex = document.registration.msex;  
-//var ufsex = document.registration.fsex; if(userid_validation(uid,5,12))
-var message = document.registration.comment;	
-{  
-//if(passid_validation(passid,7,12))  
-//{  
-if(allLetter(uname))  
-{  
-//if(alphanumeric(uadd))  
-//{   
-//if(countryselect(ucountry))  
-//{  
-//if(allnumeric(uzip))  
-//{  
-//if(ValidateEmail(uemail))  
-//{  
-//if(validsex(umsex,ufsex))  
-//{  
-}   
-}  
-return false;  
-  
+function validate() {
+    var x = document.forms["myform"]["name"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
 } 
-/*function userid_validation(uid,mx,my)  
-{  
-var uid_len = uid.value.length;  
-if (uid_len == 0 || uid_len >= my || uid_len < mx)  
-{  
-alert("User Id should not be empty / length be between "+mx+" to "+my);  
-uid.focus();  
-return false;  
-}  
-return true;  
-}  
-function passid_validation(passid,mx,my)  
-{  
-var passid_len = passid.value.length;  
-if (passid_len == 0 ||passid_len >= my || passid_len < mx)  
-{  
-alert("Password should not be empty / length be between "+mx+" to "+my);  
-passid.focus();  
-return false;  
-}  
-return true;  
-} */ 
-function allLetter(uname)  
-{   
-var letters = /^[A-Za-z]+$/;  
-if(uname.value.match(letters))  
-{  
-return true;  
-}  
-else  
-{  
-alert('Username must have alphabet characters only');  
-uname.focus();  
-return false;  
-}  
-}  
-/*function alphanumeric(uadd)  
-{   
-var letters = /^[0-9a-zA-Z]+$/;  
-if(uadd.value.match(letters))  
-{  
-return true;  
-}  
-else  
-{  
-alert('User address must have alphanumeric characters only');  
-uadd.focus();  
-return false;  
-}  
-}  
-function countryselect(ucountry)  
-{  
-if(ucountry.value == "Default")  
-{  
-alert('Select your country from the list');  
-ucountry.focus();  
-return false;  
-}  
-else  
-{  
-return true;  
-}  
-}  
-function allnumeric(uzip)  
-{   
-var numbers = /^[0-9]+$/;  
-if(uzip.value.match(numbers))  
-{  
-return true;  
-}  
-else  
-{  
-alert('ZIP code must have numeric characters only');  
-uzip.focus();  
-return false;  
-}  
-}  
-function ValidateEmail(uemail)  
-{  
-var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
-if(uemail.value.match(mailformat))  
-{  
-return true;  
-}  
-else  
-{  
-alert("You have entered an invalid email address!");  
-uemail.focus();  
-return false;  
-}  
-} function validsex(umsex,ufsex)  
-{  
-x=0;  
-  
-if(umsex.checked)   
-{  
-x++;  
-} if(ufsex.checked)  
-{  
-x++;   
-}  
-if(x==0)  
-{  
-alert('Select Male/Female');  
-umsex.focus();  
-return false;  
-} */ 
-else  
-{  
-alert('Form Succesfully Submitted');  
-window.location.reload()  
-return true;  
-}  
-}
+$(function() {
+
+    $("#form input,#form textarea").jqBootstrapValidation({
+        preventSubmit: true,
+        submitError: function($form, event, errors) {
+            // something to have when submit produces an error ?
+            // Not decided if I need it yet
+        },
+        submitSuccess: function($form, event) {
+            event.preventDefault(); // prevent default submit behaviour
+            // get values from FORM
+            var name = $("input#name").val();
+            //var phone = $("input#phone").val();
+            //var email = $("input#email").val();
+            var message = $("textarea#message").val();
+            var firstName = name; // For Success/Failure Message
+            // Check for white space in name for Success/Fail message
+            if (firstName.indexOf(' ') >= 0) {
+                firstName = name.split(' ').slice(0, -1).join(' ');
+            }
+            $.ajax({
+                url: "./bin/comments.php",
+                type: "POST",
+                data: {
+                    name: name,
+                    //phone: phone,
+                    //email: email,
+                    message: message
+                },
+                cache: false,
+                success: function() {
+                    // Success message
+                    $('#success').html("<div class='alert alert-success'>");
+                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                        .append("</button>");
+                    $('#success > .alert-success')
+                        .append("<strong>Your message has been sent. </strong>");
+                    $('#success > .alert-success')
+                        .append('</div>');
+
+                    //clear all fields
+                    $('#form').trigger("reset");
+                },
+                error: function() {
+                    // Fail message
+                    $('#success').html("<div class='alert alert-danger'>");
+                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                        .append("</button>");
+                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + " it seems that my mail server is not responding...</strong> Could you please email me directly to <a href='mailto:me@example.com?Subject=Message_Me from myprogrammingblog.com;>me@example.com</a> ? Sorry for the inconvenience!");
+                    $('#success > .alert-danger').append('</div>');
+                    //clear all fields
+                    $('#form').trigger("reset");
+                },
+            })
+        },
+        filter: function() {
+            return $(this).is(":visible");
+        },
+    });
+
+    $("a[data-toggle=\"tab\"]").click(function(e) {
+        e.preventDefault();
+        $(this).tab("show");
+    });
+});
+
+
+/*When clicking on Full hide fail/success boxes */
+$('#name').focus(function() {
+    $('#success').html('');
+});
