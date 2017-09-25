@@ -120,13 +120,13 @@
             <hr>
 		    <p><i>"Congratulations to all..."-----Prasad Dandekar</p><br><br>			
 		    <p><i><b>Feedback:</b></p>
-	    <form name="myform" id="form" action="./bin/comments.php"  onsubmit="return validate()" method="POST" >
+	    <form name="myform" id="form" action="./bin/comments.php"  method="POST" >
 		
             Name:   <input type="text" name="name"><br><br>
 			<!--Email:  <input type="email" name="email"><br><br>
 			Mobile: <input type="tel" name="mobile" maxlength="20" size="20"><br><br>-->
 			Message:<br>
-			<textarea rows="5" cols="50" name="message" style="font-family:sans-serif">Enter text here...</textarea><br><br>
+			<textarea rows="5" cols="50" name="message" style="font-family:sans-serif"></textarea><br><br>
 		    <div id="success"></div>
                     <!-- For success/fail messages -->
             <button type="submit" class="btn btn-primary">Send Message</button>

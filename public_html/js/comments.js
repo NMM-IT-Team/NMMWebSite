@@ -1,10 +1,3 @@
-function validate() {
-    var x = document.forms["myform"]["name"].value;
-    if (x == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-} 
 $(function() {
 
     $("#form input,#form textarea").jqBootstrapValidation({
@@ -48,7 +41,7 @@ $(function() {
                     //clear all fields
                     $('#form').trigger("reset");
                 },
-                error: function() {
+                errors: function() {
                     // Fail message
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
@@ -58,7 +51,7 @@ $(function() {
                     //clear all fields
                     $('#form').trigger("reset");
                 },
-            })
+            });
         },
         filter: function() {
             return $(this).is(":visible");
