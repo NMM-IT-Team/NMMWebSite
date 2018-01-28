@@ -1,39 +1,37 @@
 <form ng-app="eventApp" ng-controller="eventAppController">
-    <div>
-       <label>Event Name</label>
-       <input type="text" placeholder="Event name" ng-model="Event.Name"/>
-       <label>Event Date</label>
-       <input type="date" min="{{MinDate}}" placeholder="Event date" ng-model="Event.Date"/>
-    </div>
+  <div>
+    <label>Event Name</label>
+    <input type="text" placeholder="Event name" ng-model="Event.Name" />
+    <label>Event Date</label>
+    <input type="date" min="{{MinDate}}" placeholder="Event date" ng-model="Event.Date" />
+  </div>
 
-   <div>
-     <label>Address</label>
-     <textarea ng-model="Event.Address">by default this area is filled with text and is completely amazing to see huge text</textarea>
-     <label>Start time</label>
-     <input ng-model="Event.StartTime" type="time" id="timepicker" placeholder="Start time"/>
-   </div>
+  <div>
+    <label>Address</label>
+    <textarea ng-model="Event.Address">by default this area is filled with text and is completely amazing to see huge text</textarea>
+    <label>Start time</label>
+    <input ng-model="Event.StartTime" type="time" id="timepicker" placeholder="Start time" />
+  </div>
 
-    <div>
-     <label>Contact</label>
-     <input ng-model="Event.Contact" type="text" placeholder="Contact person"/>
-     <label>Phone no</label>
-     <input ng-model="Event.PhoneNo" type="text" placeholder="Phone#"/>
-   </div>
-   <div>
-     <label>Description</label>
-     <textarea ng-model="Event.Description" style="width:88%; margin:auto;" placeholder="Describe the event in 300 characters"></textarea>
-   </div>
+  <div>
+    <label>Contact</label>
+    <input ng-model="Event.Contact" type="text" placeholder="Contact person" />
+    <label>Phone no</label>
+    <input ng-model="Event.PhoneNo" type="text" placeholder="Phone#" />
+  </div>
+  <div>
+    <label>Description</label>
+    <textarea ng-model="Event.Description" style="width:88%; margin:auto;" placeholder="Describe the event in 300 characters"></textarea>
+  </div>
 
-   <div id="photoUpload">
-     <label>Photo upload</label>
-     <input style="width:88%; margin:auto;" name="eventImages" type="file" accept="image/*" multiple="multiple"/>
-   </div>
+  <div id="photoUpload">
+    <label>Photo upload</label>
+    <input style="width:88%; margin:auto;" name="eventImages" type="file" accept="image/*" multiple="multiple" />
+  </div>
 
-   <div id="actionButtons" style="align-content:center;">
-   <button class="ui-button ui-widget ui-corner-all">Submit</button>
-   <button class="ui-button ui-widget ui-corner-all">Reset</button>
-   </div>  
+  <div id="actionButtons" style="align-content:center;">
+    <button class="ui-button ui-widget ui-corner-all">Submit</button>
+    <button class="ui-button ui-widget ui-corner-all">Reset</button>
+  </div>
 
- </form>
-
-
+</form>

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,27 +12,30 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="../JavaScript/eventPageScript.js"></script>
   <script>
-  $( function() {
-    $( "#tabs" ).tabs();
-  } );
+    $(function () {
+      $("#tabs").tabs();
+    });
   </script>
 </head>
+
 <body ng-app="eventApp">
- 
-<div id="tabs">
-  <ul>
-    <li><a href="#tabs-1">Event</a></li>
-    <li><a href="#tabs-2">Newsletter</a></li>
-  </ul>
-  <div id="tabs-1">
+
+  <div id="tabs">
+    <ul>
+      <li>
+        <a href="#tabs-1">Event</a>
+      </li>
+      <li>
+        <a href="#tabs-2">Newsletter</a>
+      </li>
+    </ul>
+    <div id="tabs-1">
       <div ng-include src="'./EventPage.html'"></div>
-  </div>
-  <div id="tabs-2">
+    </div>
+    <div id="tabs-2">
       <div ng-include src="'./NewsLetterPage.html'"></div>
+    </div>
+
   </div>
-  
-</div>
- 
- 
 </body>
 </html>
