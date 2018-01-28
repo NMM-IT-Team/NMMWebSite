@@ -1,37 +1,39 @@
-<form ng-app="eventApp" ng-controller="eventAppController">
+<form id="EventInputForm" name="EventForm" ng-controller="eventAppController">
   <div>
     <label>Event Name</label>
-    <input type="text" placeholder="Event name" ng-model="Event.Name" />
+    <input id="EventName" type="text" placeholder="Event name" ng-model="Event.Name" required="required" />
     <label>Event Date</label>
-    <input type="date" min="{{MinDate}}" placeholder="Event date" ng-model="Event.Date" />
+    <input type="date" min="{{MinDate}}" placeholder="Event date" ng-model="Event.Date" required="required" />
   </div>
 
   <div>
     <label>Address</label>
-    <textarea ng-model="Event.Address">by default this area is filled with text and is completely amazing to see huge text</textarea>
+    <textarea id="eventAddress" placeholder="Event address" ng-model="Event.Address" required="required"></textarea>
     <label>Start time</label>
-    <input ng-model="Event.StartTime" type="time" id="timepicker" placeholder="Start time" />
+    <input ng-model="Event.StartTime" type="time" id="timepicker" placeholder="Start time" required="required" />
   </div>
 
   <div>
     <label>Contact</label>
-    <input ng-model="Event.Contact" type="text" placeholder="Contact person" />
+    <input ng-model="Event.Contact" type="text" placeholder="Contact person" required="required" />
     <label>Phone no</label>
-    <input ng-model="Event.PhoneNo" type="text" placeholder="Phone#" />
+    <input ng-model="Event.PhoneNo" type="text" placeholder="Phone#" required="required" />
   </div>
   <div>
     <label>Description</label>
-    <textarea ng-model="Event.Description" style="width:88%; margin:auto;" placeholder="Describe the event in 300 characters"></textarea>
+    <textarea id="eventDescription" ng-model="Event.Description" style="width:88%; margin:auto;" placeholder="Describe the event in 300 characters"
+      required="required"></textarea>
   </div>
 
   <div id="photoUpload">
     <label>Photo upload</label>
-    <input style="width:88%; margin:auto;" name="eventImages" type="file" accept="image/*" multiple="multiple" />
+    <input style="width:88%; margin:auto;" name="eventImages" type="file" accept="image/*" multiple="multiple" required="required"
+    />
   </div>
 
   <div id="actionButtons" style="align-content:center;">
-    <button class="ui-button ui-widget ui-corner-all">Submit</button>
-    <button class="ui-button ui-widget ui-corner-all">Reset</button>
+    <button class="ui-button ui-widget ui-corner-all" ng-click="SaveEvent()">Submit</button>
+    <button class="ui-button ui-widget ui-corner-all" ng-click="ResetEventPage()">Reset</button>
   </div>
 
 </form>
