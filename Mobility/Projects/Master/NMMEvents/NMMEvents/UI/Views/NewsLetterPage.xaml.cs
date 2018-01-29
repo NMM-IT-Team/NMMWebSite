@@ -21,6 +21,13 @@ namespace NMMEvents.UI.Views
             this.BindingContext = _viewModel;
             InitializeComponent();
             uxNewsLetterList.Items = _viewModel.NewsInfoList.ToList();
+
+            //TODO: implement this using different pattern
+            MessagingCenter.Subscribe<object>(this, "EndRefreshNewsLetterPage", (sender) =>
+            {
+                uxNewsLetterList.EndRefresh();
+            });
+
         }
     }
 }

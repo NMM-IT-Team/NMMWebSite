@@ -9,6 +9,10 @@
 
             <controls:ExtendedListView x:Name="uxNewsLetterList" RowHeight="100" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ItemsSource="{Binding NewsInfoList}" 
             ItemTappedCommand="{Binding OnListViewRowSelect}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsRefreshing}"
+                RefreshCommand="{Binding OnRefreshCommand}"
+                ScrollsToTop="true"
                 BackgroundColor="Transparent">
                 <ListView.ItemTemplate>
                     <DataTemplate>

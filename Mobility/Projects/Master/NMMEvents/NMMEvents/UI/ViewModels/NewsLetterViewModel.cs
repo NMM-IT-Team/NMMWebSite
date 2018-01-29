@@ -6,6 +6,7 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using NMMEvents.UI.Views;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace NMMEvents.UI.ViewModels
 {
@@ -32,6 +33,19 @@ namespace NMMEvents.UI.ViewModels
             }
         }
 
+        private Command _onRefreshCommand;
+        public ICommand OnRefreshCommand
+        {
+            get
+            {
+                if (_onRefreshCommand == null)
+                {
+                    _onRefreshCommand = new Command(async () => await Retrieve());
+                }
+                return _onRefreshCommand;
+            }
+        }
+
         #endregion
 
         public NewsLetterViewModel(INavigation navigation) : base(navigation)
@@ -44,6 +58,18 @@ namespace NMMEvents.UI.ViewModels
         {
             NavigateTo(new EventDetailsPage());
         }
+
+        protected override Task Retrieve()
+        {
+            //TODO: Get back to this and implement using different pattern
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                MessagingCenter.Send<object>(this, "EndRefreshNewsLetterPage");
+            });
+
+            return Task.Delay(4000);
+        }
+
         #endregion
 
     }

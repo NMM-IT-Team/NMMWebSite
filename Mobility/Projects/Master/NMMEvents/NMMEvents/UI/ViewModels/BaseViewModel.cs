@@ -12,6 +12,60 @@ namespace NMMEvents.UI.ViewModels
     {
         #region Members
         protected INavigation Navigation { get; private set; }
+
+        bool _isBusy;
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set
+            {
+                if (_isBusy != value)
+                {
+                    _isBusy = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        bool _isRefreshing;
+        public bool IsRefreshing
+        {
+            get { return _isRefreshing; }
+            set
+            {
+                _isRefreshing = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
+
+        #region Commmands
+
+        private Command _onRetrieveCommand;
+        public virtual ICommand OnRetrieveCommand
+        {
+            get
+            {
+                if (_onRetrieveCommand == null)
+                {
+                    _onRetrieveCommand = new Command(async () =>
+                    {
+                        try
+                        {
+                            await Retrieve();
+                        }
+                        catch (Exception ex)
+                        {
+                            WriteOnConsole(ex.Message);
+                        }
+                    });
+                }
+
+                return _onRetrieveCommand;
+            }
+        }
+
         #endregion
 
 
@@ -25,12 +79,28 @@ namespace NMMEvents.UI.ViewModels
         #endregion
 
         #region Public methods
+
         public void NavigateTo(Page pageToNavigate)
         {
             if (Navigation != null && pageToNavigate != null)
             {
                 Navigation.PushAsync(pageToNavigate);
             }
+        }
+
+        //writes string on console
+        public void WriteOnConsole(string data)
+        {
+            System.Diagnostics.Debug.WriteLine(data);
+        }
+
+        #endregion
+
+        #region protected methods
+
+        protected virtual Task Retrieve()
+        {
+            return Task.Delay(0);
         }
 
         #endregion

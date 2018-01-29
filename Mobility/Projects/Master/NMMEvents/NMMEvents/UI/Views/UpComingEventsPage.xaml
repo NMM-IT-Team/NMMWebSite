@@ -11,7 +11,12 @@
 
             <controls:ExtendedListView x:Name="uxEventList" RowHeight="100" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ItemsSource="{Binding EventList}" 
             ItemTappedCommand="{Binding OnListViewRowSelect}"
-                BackgroundColor="Transparent">
+                BackgroundColor="Transparent"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsRefreshing}"
+                RefreshCommand="{Binding OnRefreshCommand}"
+                ScrollsToTop="true"
+                >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

@@ -23,6 +23,13 @@ namespace NMMEvents.UI.Views
             this.BindingContext = _viewModel;
             InitializeComponent();
             uxEventList.Items = _viewModel.EventList.ToList();
+
+            //TODO: implement this using different pattern
+            MessagingCenter.Subscribe<object>(this, "EndRefreshUpcomingEvent", (sender) =>
+            {
+                uxEventList.EndRefresh();
+            });
+
         }
         #endregion
     }
