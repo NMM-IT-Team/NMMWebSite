@@ -8,6 +8,7 @@ using Android.Views;
 using Android.Widget;
 using Xamarin.Forms.Platform.Android;
 using NMMEvents.UI;
+using NMMEvents.BusinessObjects;
 
 namespace NMMEvents.Droid
 {
@@ -55,8 +56,17 @@ namespace NMMEvents.Droid
                 // no view to re-use, create new
                 view = context.LayoutInflater.Inflate(Resource.Layout.NativeAndroidEventCell, null);
             }
-            view.FindViewById<TextView>(Resource.Id.textView1).Text = "Event name";
-            view.FindViewById<TextView>(Resource.Id.textView2).Text = "Category name";
+
+            //TODO: Use reflection and fix this use proper way to re-use this component
+            if (item is EventInfo)
+            {
+                view.FindViewById<TextView>(Resource.Id.textView1).Text = ((EventInfo)item).EventName;
+                view.FindViewById<TextView>(Resource.Id.textView2).Text = ((EventInfo)item).EventDateTime.ToString();
+            }
+            else if (item is NewsInfo)
+            {
+                view.FindViewById<TextView>(Resource.Id.textView1).Text = ((NewsInfo)item).NewsTitle;
+            }
 
             // grab the old image and dispose of it
             if (view.FindViewById<ImageView>(Resource.Id.imageView1).Drawable != null)

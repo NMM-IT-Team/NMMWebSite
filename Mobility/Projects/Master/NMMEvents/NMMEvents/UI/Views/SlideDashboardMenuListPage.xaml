@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0,30,0,0" Spacing="10" Orientation="Horizontal">
 
-            <controls:ExtendedListView x:Name="uxSlideDashboardMenuList" RowHeight="60" BackgroundColor="Transparent" Scrollable="false">
+            <ListView x:Name="uxSlideDashboardMenuList" RowHeight="60" BackgroundColor="Transparent">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -31,7 +31,7 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </controls:ExtendedListView>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

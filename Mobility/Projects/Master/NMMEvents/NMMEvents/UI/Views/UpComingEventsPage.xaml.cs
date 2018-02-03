@@ -29,7 +29,6 @@ namespace NMMEvents.UI.Views
             {
                 uxEventList.EndRefresh();
             });
-
         }
         #endregion
     }

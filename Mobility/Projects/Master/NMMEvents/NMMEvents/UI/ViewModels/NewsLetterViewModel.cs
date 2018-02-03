@@ -56,7 +56,7 @@ namespace NMMEvents.UI.ViewModels
         #region Events
         private void DidSelectRow()
         {
-            NavigateTo(new EventDetailsPage());
+            //NavigateTo(new EventDetailsPage());
         }
 
         protected override Task Retrieve()

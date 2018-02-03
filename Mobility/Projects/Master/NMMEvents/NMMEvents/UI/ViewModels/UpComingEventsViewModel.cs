@@ -21,6 +21,17 @@ namespace NMMEvents.UI.ViewModels
             set { _eventList = value; }
         }
 
+        private EventInfo _selectedEventItem;
+        public EventInfo SelectedEventItem
+        {
+            get { return _selectedEventItem; }
+            set
+            {
+                _selectedEventItem = value;
+                OnPropertyChanged("SelectedEventItem");
+            }
+        }
+
         private Command _onListViewRowSelect;
         public ICommand OnListViewRowSelect
         {
@@ -47,6 +58,12 @@ namespace NMMEvents.UI.ViewModels
             }
         }
 
+        private Command _onItemSelectedCommand;
+        public ICommand OnItemSelectedCommand
+        {
+            get { return _onItemSelectedCommand ?? (_onItemSelectedCommand = new Command<EventInfo>((selectedItem) => OnItemTapped(selectedItem))); }
+        }
+
         #endregion
 
         #region Constructor
@@ -71,7 +88,10 @@ namespace NMMEvents.UI.ViewModels
         #region Events
         private void DidSelectRow()
         {
-            NavigateTo(new EventDetailsPage());
+            if (SelectedEventItem != null)
+            {
+                NavigateTo(new EventDetailsPage(SelectedEventItem));
+            }
         }
 
         protected override Task Retrieve()
@@ -83,6 +103,11 @@ namespace NMMEvents.UI.ViewModels
             });
 
             return Task.Delay(4000);
+        }
+
+        public void OnItemTapped(EventInfo selectedItem)
+        {
+            SelectedEventItem = selectedItem;
         }
 
         #endregion
