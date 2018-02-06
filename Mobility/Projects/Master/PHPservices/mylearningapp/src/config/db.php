@@ -1,10 +1,15 @@
 <?php
 class db{
     // properties
+    // private $dbHost = 'localhost';
+    // private $dbUser = 'root';
+    // private $dbPass = 'root';
+    // private $dbName = 'Northwind';
+
     private $dbHost = 'localhost';
     private $dbUser = 'root';
     private $dbPass = 'root';
-    private $dbName = 'Northwind';
+    private $dbName = 'NMM';
 
 //Connect
 public function connect(){

@@ -13,6 +13,6 @@ $app->get('/hello/{name}', function (Request $request, Response $response, array
 });
 // customer route
 require '../src/routes/customer.php';
-
+require '../src/routes/NMMEvents.php';
 $app->run();
 
