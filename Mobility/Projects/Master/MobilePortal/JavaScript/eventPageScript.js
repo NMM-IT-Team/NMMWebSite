@@ -2,7 +2,7 @@
 
 var app = angular.module("eventApp", []);
 
-app.controller("eventAppController", ['$scope', function ($scope) {
+app.controller("eventAppController", ['$scope','$http', function ($scope,$http) {
 
     //FIXME
     //Hack to avoid the HTML input date type to select todays date dynamically
@@ -24,6 +24,7 @@ app.controller("eventAppController", ['$scope', function ($scope) {
         StartTime: "",
         Contact: "",
         PhoneNo: "",
+        EventPictures:[],
         Description: ""
     };
 
@@ -37,12 +38,24 @@ app.controller("eventAppController", ['$scope', function ($scope) {
 
     $scope.SaveEvent = function () {
         //TODO: Validate the scope model and call the service
-        if ($scope.EventForm.$valid) {
-            //TODO: Call service as all fields are filled
-            alert('TODO: Call service and save data');
-        } else {
-            alert('Please enter all the details of the event before you submit');
-        }
+        console.log('event pictures = ',$scope.Event.EventPictures);
+
+
+
+
+        
+        $http.post('http://localhost:8888/mylearningapp/public/index.php/api/events/photoPOC').
+        then(function(response) {
+            $scope.result = response.data;
+            console.log('response is = ',response.data);
+        });
+
+
+        // if ($scope.EventForm.$valid) {
+        //     //call service here
+        // } else {
+        //     alert('Please enter all the details of the event before you submit');
+        // }
     };
 
     $scope.ResetEventPage = function () {

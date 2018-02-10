@@ -60,8 +60,8 @@ namespace NMMEvents.Droid
             //TODO: Use reflection and fix this use proper way to re-use this component
             if (item is EventInfo)
             {
-                view.FindViewById<TextView>(Resource.Id.textView1).Text = ((EventInfo)item).EventName;
-                view.FindViewById<TextView>(Resource.Id.textView2).Text = ((EventInfo)item).EventDateTime.ToString();
+                view.FindViewById<TextView>(Resource.Id.textView1).Text = ((EventInfo)item).Name;
+                view.FindViewById<TextView>(Resource.Id.textView2).Text = ((EventInfo)item).EventDate.ToString();
             }
             else if (item is NewsInfo)
             {

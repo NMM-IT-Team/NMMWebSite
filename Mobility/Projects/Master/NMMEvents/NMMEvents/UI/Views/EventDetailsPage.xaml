@@ -33,9 +33,9 @@
                     </StackLayout>
                     <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Grid.RowSpan="4" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0">
                         <StackLayout Padding="10,0,10,30">
-                            <Label FontSize="25" Text="Event name">
+                            <Label FontSize="25" Text="{Binding SelectedEvent.Name}">
                             </Label>
-                            <Editor BackgroundColor="Transparent" HeightRequest="120" Text="Twelve years before the start of the series, the Nine-Tails attacked Konohagakure, destroying much of the village and taking many lives. The leader of the village, the Fourth Hokage sacrificed his life to seal the Nine-Tails into a newborn, Naruto Uzumaki. Orphaned by the attack, Naruto was shunned by the villagers, who out of fear and anger, viewed him as the Nine-Tails itself. Though the Third Hokage outlawed speaking about anything related to the Nine-Tails, the children — taking their cues from their parents — inherited the same animosity towards Naruto. In his thirst to be acknowledged, Naruto vowed he would one day become the greatest Hokage the village had ever seen" IsEnabled="true">
+                            <Editor BackgroundColor="Transparent" HeightRequest="120" Text="{Binding SelectedEvent.Description}" IsEnabled="true">
                             </Editor>
                         </StackLayout>
                         <StackLayout Padding="10,0,10,10" Orientation="Vertical" VerticalOptions="FillAndExpand">

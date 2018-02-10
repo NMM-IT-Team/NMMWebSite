@@ -1,4 +1,4 @@
-<form id="EventInputForm" name="EventForm" ng-controller="eventAppController">
+<form method="post" enctype="multipart/form-data" id="EventInputForm" name="EventForm" ng-controller="eventAppController">
   <div>
     <label>Event Name</label>
     <input id="EventName" type="text" placeholder="Event name" ng-model="Event.Name" required="required" />
@@ -27,12 +27,12 @@
 
   <div id="photoUpload">
     <label>Photo upload</label>
-    <input style="width:88%; margin:auto;" name="eventImages" type="file" accept="image/*" multiple="multiple" required="required"
+    <input style="width:88%; margin:auto;" name="Event.EventPictures" type="file" accept="image/*" multiple="multiple" required="required"
     />
   </div>
 
   <div id="actionButtons" style="align-content:center;">
-    <button class="ui-button ui-widget ui-corner-all" ng-click="SaveEvent()">Submit</button>
+    <button type="submit" class="ui-button ui-widget ui-corner-all" ng-click="SaveEvent()">Submit</button>
     <button class="ui-button ui-widget ui-corner-all" ng-click="ResetEventPage()">Reset</button>
   </div>
 

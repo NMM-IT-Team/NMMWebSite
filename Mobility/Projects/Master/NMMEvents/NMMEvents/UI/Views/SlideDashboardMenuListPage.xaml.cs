@@ -20,7 +20,6 @@ namespace NMMEvents.UI.Views
             this.BindingContext = _viewModel;
             InitializeComponent();
             this.Title = "Menu";
-            // uxSlideDashboardMenuList.Items = _viewModel.MenuInfoList;
             uxSlideDashboardMenuList.ItemsSource = _viewModel.MenuInfoList;
         }
     }

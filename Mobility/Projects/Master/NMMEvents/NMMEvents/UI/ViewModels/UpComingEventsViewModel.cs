@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using NMMEvents.UI.Views;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using NMMEvents.DataLayer;
 
 namespace NMMEvents.UI.ViewModels
 {
@@ -14,8 +15,8 @@ namespace NMMEvents.UI.ViewModels
     {
 
         #region Properties
-        private ObservableCollection<EventInfo> _eventList;
-        public ObservableCollection<EventInfo> EventList
+        private List<EventInfo> _eventList;
+        public List<EventInfo> EventList
         {
             get { return _eventList; }
             set { _eventList = value; }
@@ -71,16 +72,9 @@ namespace NMMEvents.UI.ViewModels
         public UpComingEventsViewModel(INavigation navigation) : base(navigation)
         {
             IsRefreshing = false;
-            EventList = EventInfo.GetEventInfoTempList();
-        }
-
-        public List<EventInfo> GetEventInfoListType()
-        {
-            if (this.EventList != null)
-            {
-                return this.EventList.ToList();
-            }
-            return null;
+            var result = new DataLayer.EventSession();
+            EventList = result.FetchEvents();
+            result = null;
         }
 
         #endregion

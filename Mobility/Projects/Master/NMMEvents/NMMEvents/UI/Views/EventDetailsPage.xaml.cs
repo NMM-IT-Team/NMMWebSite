@@ -22,7 +22,7 @@ namespace NMMEvents.UI.Views
             _viewModel = new EventDetailsViewModel(this.Navigation);
             _viewModel.SelectedEvent = info;
             this.BindingContext = _viewModel;
-            this.Title = info.EventName;
+            //this.Title = info.EventName;
         }
     }
 }
