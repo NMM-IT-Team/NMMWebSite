@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
+using Plugin.Connectivity;
+
 namespace NMMEvents.UI.ViewModels
 {
     public class BaseViewModel
@@ -86,6 +88,29 @@ namespace NMMEvents.UI.ViewModels
             {
                 Navigation.PushAsync(pageToNavigate);
             }
+        }
+
+        //TODO: Need to test this in real device for no internet
+        public bool CheckInternet()
+        {
+            //if (!CrossConnectivity.IsSupported)
+            //return true;
+
+            var connectivity = CrossConnectivity.Current;
+
+            try
+            {
+                return connectivity.IsConnected;
+            }
+            finally
+            {
+                CrossConnectivity.Dispose();
+            }
+        }
+
+        public void DisplayNoInternetConnectionAlert()
+        {
+            Application.Current.MainPage.DisplayAlert("Internet connection required", "It looks like your are not connected to the internet, please connect to a working internet connection and try again", "OK");
         }
 
         //writes string on console

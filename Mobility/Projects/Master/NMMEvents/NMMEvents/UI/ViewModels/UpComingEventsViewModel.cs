@@ -72,9 +72,16 @@ namespace NMMEvents.UI.ViewModels
         public UpComingEventsViewModel(INavigation navigation) : base(navigation)
         {
             IsRefreshing = false;
-            var result = new DataLayer.EventSession();
-            EventList = result.FetchEvents();
-            result = null;
+            if (CheckInternet())
+            {
+                var result = new DataLayer.EventSession();
+                EventList = result.FetchEvents();
+                result = null;
+            }
+            else
+            {
+                DisplayNoInternetConnectionAlert();
+            }
         }
 
         #endregion

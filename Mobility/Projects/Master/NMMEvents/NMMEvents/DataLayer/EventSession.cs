@@ -12,7 +12,7 @@ namespace NMMEvents.DataLayer
 
         public List<EventInfo> FetchEvents()
         {
-            var uri = new Uri(string.Format("http://10.252.210.145:8888/mylearningapp/public/index.php/api/events", string.Empty));
+            var uri = new Uri(string.Format("http://192.168.0.12:8888/mylearningapp/public/index.php/api/events", string.Empty));
             var eventData = GetData<EventInfo>(uri);
             if (eventData != null && eventData.Count > 0)
             {

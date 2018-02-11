@@ -65,11 +65,11 @@ namespace NMMEvents.UI.ViewModels
             {
                 case Device.iOS:
                     Device.OpenUri(
-                        new Uri(string.Format("http://maps.apple.com/?q={0}", WebUtility.UrlEncode(""))));
+                        new Uri(string.Format("http://maps.apple.com/?q={0}", WebUtility.UrlEncode(SelectedEvent.Location))));
                     break;
                 case Device.Android:
                     Device.OpenUri(
-                        new Uri(string.Format("geo:0,0?q={0}", WebUtility.UrlEncode(""))));
+                        new Uri(string.Format("geo:0,0?q={0}", WebUtility.UrlEncode(SelectedEvent.Location))));
                     break;
             }
         }
