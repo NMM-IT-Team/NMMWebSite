@@ -13,41 +13,38 @@ $configuration = [
 $errorConfigurations = new \Slim\Container($configuration);
 $app = new \Slim\App($errorConfigurations);
 
-function UploadImages(Request $request, Response $response)
+function UploadImages(Request $request, $EventId)
 {
-    /* TODO
-     * create sepearate folder for seperate event with eventId
-     * make sure the size of any the image uploaded is not more than 1MB even before you upload the image
-     * save the path of the destination folder along with the image name and extension
-     * clean up unwanted code
-     */
     $directory = $_SERVER['DOCUMENT_ROOT'] . '/mylearningapp/uploads/';
     $uploadedFiles = $request->getUploadedFiles();
-    $uploadedFileArray = $uploadedFiles['EventImages'];
+    $uploadedImageArray = $uploadedFiles['EventImages'];
 
-    foreach ($uploadedFileArray as $keyIndex => $fileName) {
+    foreach ($uploadedImageArray as $keyIndex => $fileName) {
 
         if ($fileName->getError() === UPLOAD_ERR_OK) {
+            // if directory is not present as per the event id then create the directory
+            if (!file_exists($directory . $EventId)) {
+                mkdir($directory . $EventId, 0755, true);
+            }
+
             $userFileName = $fileName->getClientFileName();
-            $fileName->moveTo($directory . $userFileName);
-            $response->write('uploaded ' . $directory . $userFileName . '<br/>');
-            //database operation based on the event id
-            InsertImageInDatabase($directory . $userFileName);
+            $directoryPath = $directory . $EventId . '/';
+            $fileName->moveTo($directoryPath . $userFileName);
+            InsertImageInDatabase($directoryPath . $userFileName, $EventId);
+
         }
     }
 }
 
-function InsertImageInDatabase($imagePath)
+function InsertImageInDatabase($imagePath, $EventId)
 {
     try {
         $db = new db();
         $db = $db->connect();
 
         $sqlProcedure = 'CALL uspInsertPhoto(:EventId,:Imagepath)';
-        //TODO: get this dynamically
-        $eventId = 1;
         $stmt = $db->prepare($sqlProcedure);
-        $stmt->bindParam(':EventId', $eventId, PDO::PARAM_INT);
+        $stmt->bindParam(':EventId', $EventId, PDO::PARAM_INT);
         $stmt->bindParam(':Imagepath', $imagePath, PDO::PARAM_STR);
 
         // execute the stored procedure
@@ -70,14 +67,11 @@ $app->post('/api/events/add', function (Request $request, Response $response) {
     $eventLocation = $request->getParam('Location');
     $eventDate = $request->getParam('Date');
     $eventVenuName = $request->getParam('VenuName');
-    $eventIsActive = $request->getParam('IsActive');
-    $eventCreatedOn = $request->getParam('CreatedOn');
-    $eventModifiedOn = $request->getParam('ModifiedOn');
 
     $sql = "INSERT INTO Event (Name, Description, IsCommercial, Cost, Location,
-        Event_Date, Venu_Name, PhotoId, IsActive, CreatedOn, ModifiedOn)
+        Event_Date, Venu_Name, IsActive, CreatedOn, ModifiedOn)
         VALUES (:Name, :Description, :IsCommercial, :Cost, :Location,
-        :Date, :Venu_Name, :PhotoId, :IsActive, :CreatedOn, :ModifiedOn)";
+        :Date, :Venu_Name, :IsActive, :CreatedOn, :ModifiedOn);";
     try {
         $db = new db();
         $db = $db->connect();
@@ -91,16 +85,19 @@ $app->post('/api/events/add', function (Request $request, Response $response) {
         $stmt->bindParam(':Date', $eventDate);
         $stmt->bindParam(':Venu_Name', $eventVenuName);
 
-        $stmt->bindParam(':IsActive', $eventIsActive);
-        $stmt->bindParam(':CreatedOn', $eventCreatedOn);
-        $stmt->bindParam(':ModifiedOn', $eventModifiedOn);
+        $eventActive = 1;
+        $stmt->bindParam(':IsActive', $eventActive);
+
+        $createdDateTime = date("m/d/Y", time());
+//TODO: Created date is always null :(
+        $stmt->bindParam(':CreatedOn', $createdDateTime);
+        $stmt->bindParam(':ModifiedOn', $createdDateTime);
 
         $stmt->execute();
-        echo '{ "Message":{"text":Data added}}';
+        $insertedEventId = $db->lastInsertId();
         $db = null;
 
-        //Start uploading images here
-        UploadImages($request, $response);
+        UploadImages($request, $insertedEventId);
 
     } catch (PDOException $exception) {
         echo '{"error":{"text":' . $exception->getMessage() . '}';
@@ -150,6 +147,22 @@ $app->get('/api/events/delete/{id}', function (Request $request, Response $respo
         $eventData = $stmt->execute();
         $db = null;
         echo json_encode($eventData);
+    } catch (PDOException $exception) {
+        echo '{"error":{"text":' . $exception->getMessage() . '}';
+    }
+});
+
+//get photos path by Id
+$app->get('/api/eventsPhoto/{id}', function (Request $request, Response $response) {
+    $id = $request->getAttribute('id');
+    $sql = "SELECT photo.Id,photo.EventId,photo.ImagePath FROM Event_Photo photo where photo.EventId = $id and photo.IsActive = true";
+    try {
+        $db = new db();
+        $db = $db->connect();
+        $stmt = $db->query($sql);
+        $eventPhotoData = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        echo json_encode($eventPhotoData);
     } catch (PDOException $exception) {
         echo '{"error":{"text":' . $exception->getMessage() . '}';
     }
