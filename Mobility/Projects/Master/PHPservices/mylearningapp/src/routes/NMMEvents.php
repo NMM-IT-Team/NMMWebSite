@@ -30,27 +30,27 @@ function UploadImages(Request $request, $EventId)
             $userFileName = $fileName->getClientFileName();
             $directoryPath = $directory . $EventId . '/';
             $fileName->moveTo($directoryPath . $userFileName);
-            InsertImageInDatabase($directoryPath . $userFileName, $EventId);
+            InsertImageInDatabase($directoryPath, $directoryPath . $userFileName, $EventId);
 
         }
     }
 }
 
-function InsertImageInDatabase($imagePath, $EventId)
+function InsertImageInDatabase($rootFolderPath, $imagePath, $EventId)
 {
     try {
         $db = new db();
         $db = $db->connect();
 
-        $sqlProcedure = 'CALL uspInsertPhoto(:EventId,:Imagepath)';
+        $sqlProcedure = 'CALL uspInsertPhoto(:EventId,:Imagepath,:RootFolder)';
         $stmt = $db->prepare($sqlProcedure);
         $stmt->bindParam(':EventId', $EventId, PDO::PARAM_INT);
         $stmt->bindParam(':Imagepath', $imagePath, PDO::PARAM_STR);
+        $stmt->bindParam(':RootFolder', $rootFolderPath, PDO::PARAM_STR);
 
         // execute the stored procedure
         $stmt->execute();
         $stmt->closeCursor();
-
         $db = null;
     } catch (PDOException $exception) {
         echo '{"error":{"text":' . $exception->getMessage() . '}';
@@ -88,7 +88,7 @@ $app->post('/api/events/add', function (Request $request, Response $response) {
         $eventActive = 1;
         $stmt->bindParam(':IsActive', $eventActive);
 
-        $createdDateTime = date("m/d/Y", time());
+        $createdDateTime = date("m/d/Y h:i:sa");
 //TODO: Created date is always null :(
         $stmt->bindParam(':CreatedOn', $createdDateTime);
         $stmt->bindParam(':ModifiedOn', $createdDateTime);
@@ -122,14 +122,18 @@ $app->get('/api/events/{id}', function (Request $request, Response $response) {
 
 //get all event details
 $app->get('/api/events', function (Request $request, Response $response) {
-    $id = $request->getAttribute('id');
-    $sql = "SELECT * FROM Event";
     try {
+        $sqlProcedure = 'CALL sp_getEvents';
         $db = new db();
         $db = $db->connect();
-        $stmt = $db->query($sql);
+        $stmt = $db->prepare($sqlProcedure);
+        $stmt->execute();
         $eventData = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
+        /* TODO: Items
+        Iterate throw the folder in the rootpath and create an array of image path
+        Return the JSON
+         * */
         echo json_encode($eventData);
     } catch (PDOException $exception) {
         echo '{"error":{"text":' . $exception->getMessage() . '}';
