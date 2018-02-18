@@ -1,0 +1,14 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `uspInsertPhoto`(IN `EventId` INT, IN `Imagepath` VARCHAR(300) CHARSET utf8, IN `RootFolder` VARCHAR(300) CHARSET utf8)
+    NO SQL
+INSERT INTO Event_Photo(EventId,RootFolder,ImagePath,IsActive,Created_Date,Modified_Date) VALUES (EventId,RootFolder,Imagepath,1,NOW(),NOW())$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getEvents`()
+    NO SQL
+SELECT DISTINCT nmmevent.Id,Name,Description,IsCommercial,Cost,Location,Event_Date,Venu_Name,nmmphoto.RootFolder 
+from event nmmevent
+JOIN Event_Photo nmmphoto
+ON nmmphoto.EventId = nmmevent.Id$$
+DELIMITER ;

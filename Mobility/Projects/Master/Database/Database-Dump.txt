@@ -1,0 +1,110 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Feb 18, 2018 at 04:12 AM
+-- Server version: 5.6.38
+-- PHP Version: 7.1.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `NMM`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Event`
+--
+
+CREATE TABLE `Event` (
+  `Id` int(11) NOT NULL,
+  `Name` varchar(30) NOT NULL,
+  `Description` text NOT NULL,
+  `IsCommercial` tinyint(1) NOT NULL,
+  `Cost` decimal(10,0) NOT NULL,
+  `Location` varchar(50) NOT NULL,
+  `Event_Date` datetime NOT NULL,
+  `Venu_Name` varchar(30) NOT NULL,
+  `IsActive` tinyint(1) NOT NULL,
+  `CreatedOn` datetime NOT NULL,
+  `ModifiedOn` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Event`
+--
+
+INSERT INTO `Event` (`Id`, `Name`, `Description`, `IsCommercial`, `Cost`, `Location`, `Event_Date`, `Venu_Name`, `IsActive`, `CreatedOn`, `ModifiedOn`) VALUES
+(18, 'Event 5', 'an awesome event', 0, '0', 'test add', '0000-00-00 00:00:00', 'test venu name', 1, '2018-02-17 20:07:37', '2018-02-17 20:07:37'),
+(19, 'Event 5', 'an awesome event', 0, '0', 'test add', '0000-00-00 00:00:00', 'test venu name', 1, '2018-02-17 20:57:36', '2018-02-17 20:57:36');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Event_Photo`
+--
+
+CREATE TABLE `Event_Photo` (
+  `Id` int(11) NOT NULL,
+  `EventId` int(11) NOT NULL,
+  `RootFolder` varchar(300) NOT NULL,
+  `ImagePath` varchar(300) NOT NULL,
+  `IsActive` int(11) NOT NULL,
+  `Created_Date` int(11) NOT NULL,
+  `Modified_Date` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Event_Photo`
+--
+
+INSERT INTO `Event_Photo` (`Id`, `EventId`, `RootFolder`, `ImagePath`, `IsActive`, `Created_Date`, `Modified_Date`) VALUES
+(20, 18, '/Applications/MAMP/htdocs/mylearningapp/uploads/18/', '/Applications/MAMP/htdocs/mylearningapp/uploads/18/pexels-photo-236047.jpeg', 1, 2147483647, 2147483647),
+(21, 19, '/Applications/MAMP/htdocs/mylearningapp/uploads/19/', '/Applications/MAMP/htdocs/mylearningapp/uploads/19/pexels-photo-236047.jpeg', 1, 2147483647, 2147483647);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `Event`
+--
+ALTER TABLE `Event`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `Event_Photo`
+--
+ALTER TABLE `Event_Photo`
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `EventId` (`EventId`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `Event`
+--
+ALTER TABLE `Event`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `Event_Photo`
+--
+ALTER TABLE `Event_Photo`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `Event_Photo`
+--
+ALTER TABLE `Event_Photo`
+  ADD CONSTRAINT `event_photo_ibfk_1` FOREIGN KEY (`EventId`) REFERENCES `Event` (`Id`);
