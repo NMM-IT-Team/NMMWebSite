@@ -2,6 +2,7 @@
 
 use \Psr\Http\Message\ResponseInterface as Response;
 use \Psr\Http\Message\ServerRequestInterface as Request;
+require '../models/NMMEventModel.php';
 
 $container = $app->getContainer();
 
@@ -26,7 +27,6 @@ function UploadImages(Request $request, $EventId)
             if (!file_exists($directory . $EventId)) {
                 mkdir($directory . $EventId, 0755, true);
             }
-
             $userFileName = $fileName->getClientFileName();
             $directoryPath = $directory . $EventId . '/';
             $fileName->moveTo($directoryPath . $userFileName);
@@ -68,33 +68,26 @@ $app->post('/api/events/add', function (Request $request, Response $response) {
     $eventDate = $request->getParam('Date');
     $eventVenuName = $request->getParam('VenuName');
 
-    $sql = "INSERT INTO Event (Name, Description, IsCommercial, Cost, Location,
-        Event_Date, Venu_Name, IsActive, CreatedOn, ModifiedOn)
-        VALUES (:Name, :Description, :IsCommercial, :Cost, :Location,
-        :Date, :Venu_Name, :IsActive, :CreatedOn, :ModifiedOn);";
+    $sqlInsertStmt = 'INSERT INTO Event (Name, Description, IsCommercial, Cost, Location,Event_Date, Venu_Name, IsActive, CreatedOn, ModifiedOn)
+    VALUES (:Name, :Description, :IsCommercial, :Cost, :Location,
+    :Event_Date, :Venu_Name, 1, NOW(), NOW())';
     try {
         $db = new db();
         $db = $db->connect();
-        $stmt = $db->prepare($sql);
+        $stmt = $db->prepare($sqlInsertStmt);
         $stmt->bindParam(':Name', $eventName);
         $stmt->bindParam(':Description', $eventDescription);
         $stmt->bindParam(':IsCommercial', $eventIsCommercial);
         $stmt->bindParam(':Cost', $eventCost);
 
         $stmt->bindParam(':Location', $eventLocation);
-        $stmt->bindParam(':Date', $eventDate);
+        $stmt->bindParam(':Event_Date', $eventDate);
         $stmt->bindParam(':Venu_Name', $eventVenuName);
-
-        $eventActive = 1;
-        $stmt->bindParam(':IsActive', $eventActive);
-
-        $createdDateTime = date("m/d/Y h:i:sa");
-//TODO: Created date is always null :(
-        $stmt->bindParam(':CreatedOn', $createdDateTime);
-        $stmt->bindParam(':ModifiedOn', $createdDateTime);
 
         $stmt->execute();
         $insertedEventId = $db->lastInsertId();
+        echo 'inserted id = ' . $insertedEventId;
+
         $db = null;
 
         UploadImages($request, $insertedEventId);
@@ -123,18 +116,20 @@ $app->get('/api/events/{id}', function (Request $request, Response $response) {
 //get all event details
 $app->get('/api/events', function (Request $request, Response $response) {
     try {
+        $NMMEventObject[] = new NMMEvent();
         $sqlProcedure = 'CALL sp_getEvents';
         $db = new db();
         $db = $db->connect();
         $stmt = $db->prepare($sqlProcedure);
         $stmt->execute();
-        $eventData = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $NMMEventObject = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
-        /* TODO: Items
-        Iterate throw the folder in the rootpath and create an array of image path
-        Return the JSON
-         * */
-        echo json_encode($eventData);
+
+        foreach ($NMMEventObject as $key => $value) {
+            $scanned_directory = array_diff(scandir($value->RootFolder), array('..', '.'));
+            $NMMEventObject[$key]->EventImages = $scanned_directory;
+        }
+        echo json_encode($NMMEventObject);
     } catch (PDOException $exception) {
         echo '{"error":{"text":' . $exception->getMessage() . '}';
     }
