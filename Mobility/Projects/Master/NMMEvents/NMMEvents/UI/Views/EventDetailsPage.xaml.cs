@@ -19,10 +19,9 @@ namespace NMMEvents.UI.Views
         public EventDetailsPage(EventInfo info)
         {
             InitializeComponent();
-            _viewModel = new EventDetailsViewModel(this.Navigation);
-            _viewModel.SelectedEvent = info;
+            _viewModel = new EventDetailsViewModel(this.Navigation, info);
             this.BindingContext = _viewModel;
-            //this.Title = info.EventName;
+            this.Title = info.Name;
         }
     }
 }

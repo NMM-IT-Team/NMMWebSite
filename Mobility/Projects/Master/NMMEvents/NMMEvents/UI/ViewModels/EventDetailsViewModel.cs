@@ -50,9 +50,22 @@ namespace NMMEvents.UI.ViewModels
         #endregion
 
         #region Constructor
-        public EventDetailsViewModel(INavigation navigation) : base(navigation)
+        public EventDetailsViewModel(INavigation navigation, EventInfo info) : base(navigation)
         {
+            SelectedEvent = info;
+            if (SelectedEvent != null)
+            {
+                //TODO: This needs to be changed until the service are deployed right
+                SelectedEvent.EventInfoImages = new List<EventImage>();
+                var rootFolder = string.Format("http://192.168.0.12:8888/mylearningapp/uploads/{0}/", SelectedEvent.Id);
 
+                foreach (var imgName in SelectedEvent.EventImages)
+                {
+                    var imagesFullpath =
+                       rootFolder + imgName;
+                    SelectedEvent.EventInfoImages.Add(new EventImage() { ImageUrl = imagesFullpath });
+                }
+            }
         }
         #endregion
 

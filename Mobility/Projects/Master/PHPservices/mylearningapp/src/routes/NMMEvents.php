@@ -124,11 +124,12 @@ $app->get('/api/events', function (Request $request, Response $response) {
         $stmt->execute();
         $NMMEventObject = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
-
+        $scanned_directory;
         foreach ($NMMEventObject as $key => $value) {
-            $scanned_directory = array_diff(scandir($value->RootFolder), array('..', '.'));
+            $scanned_directory = array_diff(scandir($value->RootFolder, 1), array('..', '.'));
             $NMMEventObject[$key]->EventImages = $scanned_directory;
         }
+
         echo json_encode($NMMEventObject);
     } catch (PDOException $exception) {
         echo '{"error":{"text":' . $exception->getMessage() . '}';

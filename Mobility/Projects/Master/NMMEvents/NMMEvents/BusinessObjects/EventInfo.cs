@@ -5,6 +5,12 @@ using Newtonsoft.Json;
 
 namespace NMMEvents.BusinessObjects
 {
+
+    public class EventImage
+    {
+        public string ImageUrl { get; set; }
+    }
+
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public class EventInfo
     {
@@ -34,17 +40,13 @@ namespace NMMEvents.BusinessObjects
         [JsonProperty("Venu_Name")]
         public string VenuName { get; set; }
 
-        [JsonProperty("PhotoId")]
-        public int PhotoId { get; set; }
+        [JsonProperty("RootFolder")]
+        public string RootFolder { get; set; }
 
-        [JsonProperty("IsActive")]
-        public string IsActive { get; set; }
+        [JsonProperty("EventImages")]
+        public List<string> EventImages { get; set; }
 
-        [JsonProperty("CreatedOn")]
-        public string CreatedOn { get; set; }
-
-        [JsonProperty("ModifiedOn")]
-        public string ModifiedOn { get; set; }
+        public List<EventImage> EventInfoImages { get; set; }
 
         #endregion
 
