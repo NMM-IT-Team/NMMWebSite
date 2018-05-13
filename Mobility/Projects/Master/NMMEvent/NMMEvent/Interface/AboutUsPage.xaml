@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NMMEvent.Interface.AboutUsPage">
+    <ContentPage.Content>
+    <ScrollView>
+            <StackLayout Orientation="Vertical" Padding = "10">
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <Label XAlign="Center" YAlign="Center" Text = "{Binding AboutUs}"/>
+                     <Image Source="splash.png" Opacity="0.8"/>
+                    </StackLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
