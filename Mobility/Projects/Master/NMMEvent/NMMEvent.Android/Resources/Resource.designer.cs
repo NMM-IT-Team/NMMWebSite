@@ -3041,13 +3041,13 @@ namespace NMMEvent.Droid
 			public const int test012 = 2130837811;
 			
 			// aapt resource value: 0x7f020134
-			public const int test02_0 = 2130837812;
+			public const int test020 = 2130837812;
 			
 			// aapt resource value: 0x7f020135
-			public const int test02_1 = 2130837813;
+			public const int test021 = 2130837813;
 			
 			// aapt resource value: 0x7f020136
-			public const int test02_2 = 2130837814;
+			public const int test022 = 2130837814;
 			
 			// aapt resource value: 0x7f020137
 			public const int tooltip_frame_dark = 2130837815;

@@ -63,9 +63,9 @@ namespace NMMEvent.Viewmodels
 			EventList = FactoryInitalizers.CreateEventManager().GetEvents().Result;
 		}
 
-		public void DidSelectRow(int eventId)
+		public void DidSelectRow(int eventId, string eventName)
 		{
-			this.NavigateTo(new Interface.EventDetailsPage(eventId));
+			this.NavigateTo(new Interface.EventDetailsPage(eventId, eventName));
 		}
 
 		private void DidSelectItem()

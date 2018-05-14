@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NMMEvent.Interface.EventDetailsPage" xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NMMEvent.Interface.EventDetailsPage" 
+             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
@@ -13,7 +14,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <StackLayout Grid.RowSpan="4" Grid.ColumnSpan="3" Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                        <!--<cv:CarouselView ItemsSource="{Binding EventDetails.EventImages, Mode=TwoWay}" x:Name="carouselview">
+                        <cv:CarouselView ItemsSource="{Binding EventDetails.EventImages, Mode=TwoWay}" x:Name="carouselview">
                             <cv:CarouselView.ItemTemplate>
                                 <DataTemplate>
                                     <Grid>
@@ -21,33 +22,18 @@
                                             <RowDefinition Height="180" />
                                             <RowDefinition Height="10" />
                                         </Grid.RowDefinitions>
-                                        <Image>
-                                            <Image.Source>
-                                                <OnPlatform x:TypeArguments="ImageSource">
-                                                    <OnPlatform.iOS>
-                                                        <FileImageSource File="{Binding ImageSource}" />
-                                                    </OnPlatform.iOS>
-                                                    <OnPlatform.Android>
-                                                        <FileImageSource File="{Binding ImageSource}" />
-                                                    </OnPlatform.Android>
-                                                    <OnPlatform.WinPhone>
-                                                        <FileImageSource File="{Binding ImageSource}" />
-                                                    </OnPlatform.WinPhone>
-                                                </OnPlatform>
-                                            </Image.Source>
-                                        </Image>
-                                        <Image Grid.RowSpan="2" Aspect="AspectFill" Source="Picture" />
+                                        <Image Grid.RowSpan="2" Aspect="AspectFill" Source="{Binding ImageSource}"/>
                                         <StackLayout Grid.Row="1" BackgroundColor="#80000000" Padding="12">
                                             <Label TextColor="White" Text="{Binding ImageSource}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
                                         </StackLayout>
                                     </Grid>
                                 </DataTemplate>
                             </cv:CarouselView.ItemTemplate>
-                        </cv:CarouselView>-->
+                        </cv:CarouselView>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Grid.RowSpan="4" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0">
                         <StackLayout Padding="10,0,10,30">
-                            <Label FontSize="25" Text="{Binding SelectedEvent.Name}" TextColor="Teal">
+                            <Label FontSize="25" Text="Event name" TextColor="Teal">
                             </Label>
                             <Editor BackgroundColor="Transparent" HeightRequest="120" Text="{Binding EventDetails.Description}" IsEnabled="true">
                             </Editor>

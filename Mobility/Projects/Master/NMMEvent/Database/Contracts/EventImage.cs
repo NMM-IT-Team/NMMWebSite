@@ -46,7 +46,7 @@ namespace Database.Contracts
 			for (int index = 0; index < 2; index++)
 			{
 				var eventImages = new EventImage();
-				eventImages.ImageSource = $"test02_{index}.jpg";
+				eventImages.ImageSource = $"test02{index}.jpg";
 				eventImage.Add(eventImages);
 			}
 

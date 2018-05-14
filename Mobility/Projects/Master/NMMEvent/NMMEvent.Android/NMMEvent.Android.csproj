@@ -105,9 +105,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\layout\NativeAndroidEventCell.axml" />
     <AndroidResource Include="Resources\drawable\GA1.jpg" />
-    <AndroidResource Include="Resources\drawable\test02_0.jpeg" />
-    <AndroidResource Include="Resources\drawable\test02_1.jpg" />
-    <AndroidResource Include="Resources\drawable\test02_2.jpg" />
+    <AndroidResource Include="Resources\drawable\test020.jpg" />
+    <AndroidResource Include="Resources\drawable\test021.jpg" />
+    <AndroidResource Include="Resources\drawable\test022.jpg" />
     <AndroidResource Include="Resources\drawable\test010.jpg" />
     <AndroidResource Include="Resources\drawable\test011.jpg" />
     <AndroidResource Include="Resources\drawable\test012.jpg" />

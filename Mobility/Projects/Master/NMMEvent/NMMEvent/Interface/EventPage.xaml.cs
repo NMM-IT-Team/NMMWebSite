@@ -24,7 +24,7 @@ namespace NMMEvent.Interface
 			if (e.SelectedItem != null)
 			{
 				var selectedItem = e.SelectedItem as DCEvents;
-				_viewModel.DidSelectRow(selectedItem.Id);
+				_viewModel.DidSelectRow(selectedItem.Id, selectedItem.Name);
 			}
 		}
 
