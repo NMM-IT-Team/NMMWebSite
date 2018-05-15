@@ -36,16 +36,24 @@ namespace Database
 
 		public static List<DCEventDetails> GenerateEventDetailsSeedScriptObjects()
 		{
+			var eventLocation = "13010 Arbor St, Omaha, NE 68144";
+			var eventVenuName = "Hindu Temple";
+
 			return new List<DCEventDetails>()
 			{
-				new DCEventDetails(){EventId=1,Description="Padva description here",IsCommercial=false,Cost=0,Location="Temporary location",VenuName="Test Venu name",
+				new DCEventDetails(){EventId=1,Description="Padva description here",IsCommercial=false,Cost=0,Location=eventLocation,VenuName=eventVenuName,
 					RootFolder=""},
 
-				new DCEventDetails(){EventId=2,Description="Picnic description here",IsCommercial=false,Cost=0,Location="Temporary location",VenuName="Test Venu name",
+				new DCEventDetails(){EventId=2,Description="Picnic description here",IsCommercial=false,Cost=0,Location=eventLocation,VenuName=eventVenuName,
 					RootFolder=""},
 
-				new DCEventDetails(){EventId=3,Description="Ganapati description here",IsCommercial=false,Cost=0,Location="Temporary location",VenuName="Test Venu name",RootFolder=""},
-				new DCEventDetails(){EventId=4,Description="Diwali description here",IsCommercial=false,Cost=0,Location="Temporary location",VenuName="Test Venu name",RootFolder=""},
+				new DCEventDetails(){EventId=3,Description="Ganapati description here",IsCommercial=false,Cost=0,Location=eventLocation,
+					VenuName=eventVenuName,RootFolder=""},
+				new DCEventDetails(){EventId=4,Description="Diwali description here",IsCommercial=false,Cost=0,Location=eventLocation,
+					VenuName=eventVenuName,RootFolder=""},
+
+				new DCEventDetails(){EventId=5,Description="Workshop description here",IsCommercial=false,Cost=0,Location=eventLocation,VenuName=eventVenuName,
+					RootFolder=""}
 			};
 		}
 	}

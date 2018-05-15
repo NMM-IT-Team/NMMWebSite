@@ -1,10 +1,12 @@
-﻿using System;
+﻿using System.Net;
 using System.Windows.Input;
 using Xamarin.Forms;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Database;
 using Database.Factory;
+using System;
+
 namespace NMMEvent.Viewmodels
 {
 	public class CarouselItem
@@ -39,19 +41,21 @@ namespace NMMEvent.Viewmodels
 			}
 		}
 
+		string _eventTitle;
+		public string EventTitle
+		{
+			get { return _eventTitle; }
+			set { _eventTitle = value; }
+		}
+
+
 		public ObservableCollection<CarouselItem> pictures { get; set; }
 
 		public ManagerFactoryInitalizers FactoryInitalizers = new ManagerFactory();
 
-		public EventDetailsViewModel(INavigation navigation, int eventId) : base(navigation)
+		public EventDetailsViewModel(INavigation navigation, int eventId, string eventName) : base(navigation)
 		{
-
-			//pictures = new ObservableCollection<CarouselItem>();
-
-			//pictures.Add(new CarouselItem { Picture = ImageSource.FromResource("test010.jpg") });
-			//pictures.Add(new CarouselItem { Picture = ImageSource.FromResource("test011.jpg") });
-			//pictures.Add(new CarouselItem { Picture = ImageSource.FromResource("test012.jpg") });
-
+			EventTitle = eventName;
 			EventDetails = FactoryInitalizers.CreateEventManager().GetEventDetails(eventId).Result;
 			EventDetails.EventImages = new Database.Contracts.EventImage().PopulateEventImage(EventDetails.EventId);
 
@@ -66,8 +70,8 @@ namespace NMMEvent.Viewmodels
 					//new Uri(string.Format("http://maps.apple.com/?q={0}", WebUtility.UrlEncode(SelectedEvent.Location))));
 					break;
 				case Device.Android:
-					//Device.OpenUri(
-					//new Uri(string.Format("geo:0,0?q={0}", WebUtility.UrlEncode(SelectedEvent.Location))));
+					Device.OpenUri(
+						new Uri(string.Format("geo:0,0?q={0}", WebUtility.UrlEncode(EventDetails.Location))));
 					break;
 			}
 		}

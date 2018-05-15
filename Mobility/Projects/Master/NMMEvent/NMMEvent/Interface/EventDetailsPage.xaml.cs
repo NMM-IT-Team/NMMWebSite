@@ -9,7 +9,7 @@ namespace NMMEvent.Interface
 
 		public EventDetailsPage(int eventId, string eventName)
 		{
-			_viewModel = new Viewmodels.EventDetailsViewModel(this.Navigation, eventId);
+			_viewModel = new Viewmodels.EventDetailsViewModel(this.Navigation, eventId, eventName);
 			BindingContext = _viewModel;
 			InitializeComponent();
 			Title = eventName;

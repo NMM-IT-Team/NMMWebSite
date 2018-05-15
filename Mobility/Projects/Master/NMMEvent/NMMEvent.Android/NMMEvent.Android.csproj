@@ -19,6 +19,7 @@
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <AndroidSupportedAbis>arm64-v8a;armeabi;armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,7 +29,7 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidLinkMode>None</AndroidLinkMode>
+<AndroidSupportedAbis>arm64-v8a;armeabi;armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,7 +39,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
-    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+<AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+<AndroidSupportedAbis>armeabi-v7a</AndroidSupportedAbis>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -48,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.0.0.446417" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2" />
     <PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2" />
@@ -70,7 +71,10 @@
       <Version>11.0.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms.CarouselView">
-      <Version>2.3.0-pre2</Version>
+      <Version>2.3.0-pre1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>3.0.0.482510</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -105,12 +109,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\layout\NativeAndroidEventCell.axml" />
     <AndroidResource Include="Resources\drawable\GA1.jpg" />
-    <AndroidResource Include="Resources\drawable\test020.jpg" />
-    <AndroidResource Include="Resources\drawable\test021.jpg" />
-    <AndroidResource Include="Resources\drawable\test022.jpg" />
-    <AndroidResource Include="Resources\drawable\test010.jpg" />
-    <AndroidResource Include="Resources\drawable\test011.jpg" />
-    <AndroidResource Include="Resources\drawable\test012.jpg" />
     <AndroidResource Include="Resources\drawable-hdpi\splash.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\splash.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\splash.png" />
@@ -130,6 +128,27 @@
     <AndroidResource Include="Resources\drawable-xhdpi\benefiticon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\benefiticon.png" />
     <AndroidResource Include="Resources\drawable\info.png" />
+    <AndroidResource Include="Resources\drawable\padwa0.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\padwa1.jpg" />
+    <AndroidResource Include="Resources\drawable\padwa2.jpg" />
+    <AndroidResource Include="Resources\drawable\padwa3.jpg" />
+    <AndroidResource Include="Resources\drawable\picnic0.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\picnic1.jpg" />
+    <AndroidResource Include="Resources\drawable\ganpati0.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\dipawali1.jpg" />
+    <AndroidResource Include="Resources\drawable\dipawali2.jpg" />
+    <AndroidResource Include="Resources\drawable\dipawali0.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\workshop0.jpg" />
+    <AndroidResource Include="Resources\drawable\workshop1.jpg" />
+    <AndroidResource Include="Resources\drawable\workshop2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
