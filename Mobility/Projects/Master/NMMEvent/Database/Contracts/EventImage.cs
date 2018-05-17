@@ -10,7 +10,7 @@ namespace Database.Contracts
 
 		public string ImageSource { get; set; }
 
-		public List<EventImage> PopulateEventImage(int eventId)
+		public List<EventImage> PopulateEventImages(int eventId)
 		{
 			switch (eventId)
 			{
@@ -33,6 +33,54 @@ namespace Database.Contracts
 
 			return null;
 		}
+
+		public string PopulateEventImage(int eventId)
+		{
+			switch (eventId)
+			{
+				case 1:
+					return GetPadwaImage();
+
+				case 2:
+					return GetPicnicImage();
+
+				case 3:
+					return GetGanpatiImage();
+
+				case 4:
+					return GetDiwaliImage();
+
+				case 5:
+					return GetWorkshopImage();
+
+			}
+
+			return string.Empty;
+		}
+
+
+		string GetPadwaImage()
+		{
+			return "padwa0.jpg";
+		}
+		string GetPicnicImage()
+		{
+			return "picnic0.jpg";
+		}
+		string GetGanpatiImage()
+		{
+			return "ganpati0.jpg";
+		}
+
+		string GetDiwaliImage()
+		{
+			return "dipawali0.jpg";
+		}
+		string GetWorkshopImage()
+		{
+			return "workshop0.jpg";
+		}
+
 
 		List<EventImage> PopulateCarouselImageForPadwa()
 		{

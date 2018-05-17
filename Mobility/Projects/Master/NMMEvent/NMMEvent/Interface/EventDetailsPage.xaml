@@ -2,19 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NMMEvent.Interface.EventDetailsPage" 
              xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
             <StackLayout>
-                <Grid RowSpacing="100">
+                <Grid RowSpacing="20">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="120*" />
-                        <RowDefinition Height="35*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100*" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <StackLayout Grid.RowSpan="4" Grid.ColumnSpan="3" Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                        <cv:CarouselView ItemsSource="{Binding EventDetails.EventImages, Mode=TwoWay}" x:Name="carouselview">
+                    <StackLayout Grid.Row="0" Grid.Column="0" Padding="8,0,0,0">
+
+                    <Image  Aspect="AspectFill"  Source="{Binding EventImage}"></Image>
+
+                        <!--<cv:CarouselView ItemsSource="{Binding EventDetails.EventImages, Mode=TwoWay}" x:Name="carouselview">
                             <cv:CarouselView.ItemTemplate>
                                 <DataTemplate>
                                     <Grid>
@@ -29,12 +32,11 @@
                                     </Grid>
                                 </DataTemplate>
                             </cv:CarouselView.ItemTemplate>
-                        </cv:CarouselView>
+                        </cv:CarouselView>-->
                     </StackLayout>
                     <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Grid.RowSpan="4" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0">
                         <StackLayout Padding="10,0,10,30">
-                            <!--<Label FontSize="25" Text="{Binding EventTitle}" TextColor="Teal">-->
-                            <!--</Label>-->
+                           
                             <Editor BackgroundColor="Transparent" HeightRequest="120" Text="{Binding EventDetails.Description}" IsEnabled="true">
                             </Editor>
                         </StackLayout>

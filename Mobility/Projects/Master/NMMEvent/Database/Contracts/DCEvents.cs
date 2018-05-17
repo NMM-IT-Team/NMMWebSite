@@ -34,7 +34,7 @@ namespace Database
 				new DCEvents(){Name="Padwa",EventDateTime= eventDate,EventIcon=""},
 				new DCEvents(){Name="Picnic",EventDateTime= eventDate,EventIcon=""},
 				new DCEvents(){Name="Ganapati",EventDateTime= eventDate,EventIcon=""},
-				new DCEvents(){Name="Diwali",EventDateTime= eventDate,EventIcon=""},
+				new DCEvents(){Name="Diwali",EventDateTime= "11/17/2018",EventIcon=""},
 				new DCEvents(){Name="Workshops",EventDateTime= "Date yet to be finalised",EventIcon=""}
 
 			};

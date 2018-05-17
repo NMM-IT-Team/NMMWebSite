@@ -36,8 +36,6 @@ namespace NMMEvent.Viewmodels
 			set
 			{
 				_eventDetails = value;
-
-				//NotifyPropertyChanged("EventDetails");
 			}
 		}
 
@@ -48,6 +46,14 @@ namespace NMMEvent.Viewmodels
 			set { _eventTitle = value; }
 		}
 
+		string _eventImage;
+		public string EventImage
+		{
+			get { return _eventImage; }
+			set { _eventImage = value; }
+		}
+
+
 
 		public ObservableCollection<CarouselItem> pictures { get; set; }
 
@@ -57,7 +63,7 @@ namespace NMMEvent.Viewmodels
 		{
 			EventTitle = eventName;
 			EventDetails = FactoryInitalizers.CreateEventManager().GetEventDetails(eventId).Result;
-			EventDetails.EventImages = new Database.Contracts.EventImage().PopulateEventImage(EventDetails.EventId);
+			EventImage = new Database.Contracts.EventImage().PopulateEventImage(EventDetails.EventId);
 
 		}
 

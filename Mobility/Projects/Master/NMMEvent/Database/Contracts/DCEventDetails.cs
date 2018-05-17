@@ -39,9 +39,12 @@ namespace Database
 			var eventLocation = "13010 Arbor St, Omaha, NE 68144";
 			var eventVenuName = "Hindu Temple";
 
+			var padwaDesc = "NMM family invites you to celebrate gudi padwa with your family and loved ones. Come join us to celebrate this wonderful festival together at";
+
+
 			return new List<DCEventDetails>()
 			{
-				new DCEventDetails(){EventId=1,Description="Padva description here",IsCommercial=false,Cost=0,Location=eventLocation,VenuName=eventVenuName,
+				new DCEventDetails(){EventId=1,Description=padwaDesc,IsCommercial=false,Cost=0,Location=eventLocation,VenuName=eventVenuName,
 					RootFolder=""},
 
 				new DCEventDetails(){EventId=2,Description="Picnic description here",IsCommercial=false,Cost=0,Location=eventLocation,VenuName=eventVenuName,

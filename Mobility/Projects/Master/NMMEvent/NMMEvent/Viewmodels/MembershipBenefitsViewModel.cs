@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Windows.Input;
+using Xamarin.Forms;
 namespace NMMEvent.Viewmodels
 {
 	public class Membership
@@ -8,7 +10,7 @@ namespace NMMEvent.Viewmodels
 	}
 
 
-	public class MembershipBenefitsViewModel
+	public class MembershipBenefitsViewModel : BaseViewModel
 	{
 		List<Membership> _memebershipBenefits;
 		public List<Membership> MemebershipBenefits
@@ -17,8 +19,21 @@ namespace NMMEvent.Viewmodels
 			set { _memebershipBenefits = value; }
 		}
 
+		Command _joinUsCommand;
+		public ICommand JoinUsCommand
+		{
+			get
+			{
+				if (_joinUsCommand == null)
+				{
+					_joinUsCommand = new Command(NavigateToMembershipDetails);
+				}
+				return _joinUsCommand;
+			}
+		}
 
-		public MembershipBenefitsViewModel()
+
+		public MembershipBenefitsViewModel(INavigation navigation) : base(navigation)
 		{
 			//TODO: to be moved to the database this is temporary
 			MemebershipBenefits = new List<Membership>()
@@ -35,6 +50,11 @@ namespace NMMEvent.Viewmodels
 				new Membership(){Benefit="Rhythms-IAN",Description="Rhythms-IAN participation"}
 
 			};
+		}
+
+		void NavigateToMembershipDetails()
+		{
+			//NavigateTo();
 		}
 	}
 }

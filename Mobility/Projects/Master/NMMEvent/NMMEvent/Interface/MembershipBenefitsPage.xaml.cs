@@ -10,7 +10,7 @@ namespace NMMEvent.Interface
 		public MembershipBenefitsPage()
 		{
 			InitializeComponent();
-			_viewModel = new MembershipBenefitsViewModel();
+			_viewModel = new MembershipBenefitsViewModel(this.Navigation);
 			BindingContext = _viewModel;
 			Title = "Benefits";
 		}
