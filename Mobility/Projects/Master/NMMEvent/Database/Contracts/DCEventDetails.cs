@@ -36,11 +36,13 @@ namespace Database
 
 		public static List<DCEventDetails> GenerateEventDetailsSeedScriptObjects()
 		{
+			//TODO: move these strings in a resource file
 			var eventLocation = "13010 Arbor St, Omaha, NE 68144";
 			var eventVenuName = "Hindu Temple";
 
 			var padwaDesc = "Gudi Padwa is the festival that is celebrated on the first day of the Chaitra month to mark the beginning of the Hindu new year. It is mainly celebrated in Maharashtra. The day is also celebrated as Ugadi, which is also known as Yugadi, is mainly a new year festival in Andhra Pradesh and Karnataka.";
 			var ganapatidesc = "Ganesh Chaturthi also known as Vinayaka Chaturthi (Vināyaka Chaturthī) is the Hindu festival that reveres god Ganesha. A ten-day festival, it starts on the fourth day of Hindu luni-solar calendar month Bhadrapada. NMM, Marathi community sponcers/volunteer and excute this event for Hindu Temple of Omaha with Dhole Tasha! and lezim,  music  in Rath yatra and cook pure Maharashtra menu for mahaprasad.\n Ganapati Bappa Moraya!!!";
+			var diwaliDesc = "Diwali is festival of lights, prosperity and celebrated for five days. Five days are Dhanteras, Narakchaturdesi, Lakshmi Puja,  Govardhan Puja and BhauBeej. NMM Diwali  is family celebration with food, decoration,  puja, entertainment is performed by community members/local-talent.  We have Diwali celebration photos on NMM website.";
 
 			return new List<DCEventDetails>()
 			{
@@ -52,10 +54,10 @@ namespace Database
 
 				new DCEventDetails(){EventId=3,Description=ganapatidesc,IsCommercial=false,Cost=0,Location=eventLocation,
 					VenuName=eventVenuName,RootFolder=""},
-				new DCEventDetails(){EventId=4,Description="Diwali description here",IsCommercial=false,Cost=0,Location=eventLocation,
+				new DCEventDetails(){EventId=4,Description=diwaliDesc,IsCommercial=false,Cost=0,Location=eventLocation,
 					VenuName=eventVenuName,RootFolder=""},
 
-				new DCEventDetails(){EventId=5,Description="Workshop description here",IsCommercial=false,Cost=0,Location=eventLocation,VenuName=eventVenuName,
+				new DCEventDetails(){EventId=5,Description="NMM organises various workshops for all ages. These are member presented for members in various fields including Paintings, Arts. Science, Health and more.",IsCommercial=false,Cost=0,Location=eventLocation,VenuName=eventVenuName,
 					RootFolder=""}
 			};
 		}
