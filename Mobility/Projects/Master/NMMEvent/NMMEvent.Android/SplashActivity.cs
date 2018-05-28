@@ -25,7 +25,7 @@ namespace NMMEvent.Droid
 			ThreadPool.QueueUserWorkItem(o => LoadActivity());
 		}
 
-		private void LoadActivity()
+		void LoadActivity()
 		{
 			Thread.Sleep(100); // Simulate a long pause
 			RunOnUiThread(() => StartActivity(typeof(MainActivity)));
