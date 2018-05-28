@@ -14,11 +14,10 @@ namespace NMMEvent.Droid
 	{
 		protected override void OnCreate(Bundle bundle)
 		{
+			//Crash if you enable proguard: https://github.com/xamarin/Xamarin.Forms/issues/2491
 			TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar;
-
 			base.OnCreate(bundle);
-
 			global::Xamarin.Forms.Forms.Init(this, bundle);
 			LoadApplication(new App());
 

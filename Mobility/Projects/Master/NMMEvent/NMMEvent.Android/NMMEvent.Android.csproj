@@ -151,6 +151,7 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable\yoga.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

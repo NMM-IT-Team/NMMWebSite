@@ -45,12 +45,15 @@ namespace Database.Contracts
 					return GetPicnicImage();
 
 				case 3:
-					return GetGanpatiImage();
+					return GetYogaImage();
 
 				case 4:
-					return GetDiwaliImage();
+					return GetGanpatiImage();
 
 				case 5:
+					return GetDiwaliImage();
+
+				case 6:
 					return GetWorkshopImage();
 
 			}
@@ -79,6 +82,10 @@ namespace Database.Contracts
 		string GetWorkshopImage()
 		{
 			return "workshop0.jpg";
+		}
+		string GetYogaImage()
+		{
+			return "yoga.jpg";
 		}
 
 
