@@ -13,11 +13,6 @@ namespace Database.Accessors
 	{
 		EventDatabaseContext _databaseContext;
 
-		public DatabaseAccessor()
-		{
-
-		}
-
 		public async Task<List<DCEvents>> GetEventsAsync()
 		{
 			try

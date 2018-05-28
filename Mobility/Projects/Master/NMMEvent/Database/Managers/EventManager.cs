@@ -8,7 +8,7 @@ namespace Database.Managers
 {
 	public class EventManager : IEventInterface
 	{
-		private IEventAccessor EventAccessor = new EngineFactory().CreateEventAccessors();
+		readonly IEventAccessor EventAccessor = new EngineFactory().CreateEventAccessors();
 
 		public async Task<List<DCEvents>> GetEvents()
 		{

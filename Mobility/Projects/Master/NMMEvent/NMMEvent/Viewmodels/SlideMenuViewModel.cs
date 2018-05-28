@@ -66,10 +66,10 @@ namespace NMMEvent.Viewmodels
 
 		public static List<MenuInfo> GetMenuItems()
 		{
-			List<MenuInfo> info = new List<MenuInfo>();
-			info.Add(new MenuInfo() { MenuTitle = "Events", MenuImage = "eventicon.png", MenuTitleId = 1, TargetType = typeof(Interface.EventPage) });
-			info.Add(new MenuInfo() { MenuTitle = "Benefits", MenuImage = "benefiticon.png", MenuTitleId = 2, TargetType = typeof(Interface.MembershipBenefitsPage) });
-			info.Add(new MenuInfo() { MenuTitle = "About us", MenuImage = "info.png", MenuTitleId = 3, TargetType = typeof(Interface.AboutUsPage) });
+			var info = new List<MenuInfo>();
+			info.Add(new MenuInfo { MenuTitle = "Events", MenuImage = "eventicon.png", MenuTitleId = 1, TargetType = typeof(Interface.EventPage) });
+			info.Add(new MenuInfo { MenuTitle = "Benefits", MenuImage = "benefiticon.png", MenuTitleId = 2, TargetType = typeof(Interface.MembershipBenefitsPage) });
+			info.Add(new MenuInfo { MenuTitle = "About us", MenuImage = "info.png", MenuTitleId = 3, TargetType = typeof(Interface.AboutUsPage) });
 			return info;
 
 		}

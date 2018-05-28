@@ -129,13 +129,11 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\benefiticon.png" />
     <AndroidResource Include="Resources\drawable\info.png" />
     <AndroidResource Include="Resources\drawable\padwa0.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\padwa1.jpg" />
     <AndroidResource Include="Resources\drawable\padwa2.jpg" />
     <AndroidResource Include="Resources\drawable\padwa3.jpg" />
     <AndroidResource Include="Resources\drawable\picnic0.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\picnic1.jpg" />
     <AndroidResource Include="Resources\drawable\ganpati0.jpg">
@@ -144,7 +142,6 @@
     <AndroidResource Include="Resources\drawable\dipawali1.jpg" />
     <AndroidResource Include="Resources\drawable\dipawali2.jpg" />
     <AndroidResource Include="Resources\drawable\dipawali0.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\workshop0.jpg" />
     <AndroidResource Include="Resources\drawable\workshop1.jpg" />

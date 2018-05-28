@@ -7,7 +7,7 @@ namespace NMMEvent.Interface
 {
 	public partial class RootSlideDashboardPage : MasterDetailPage, IDisposable
 	{
-		private Type _detailPageType;
+		Type _detailPageType;
 
 		public RootSlideDashboardPage()
 		{

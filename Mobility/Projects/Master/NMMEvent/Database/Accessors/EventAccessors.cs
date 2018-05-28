@@ -6,7 +6,7 @@ namespace Database.Accessors
 {
 	public class EventAccessors : IEventAccessor
 	{
-		IDatabaseEngine databaseEngine = new DatabaseAccessor();
+		readonly IDatabaseEngine databaseEngine = new DatabaseAccessor();
 
 		public async Task<List<DCEvents>> GetEvents()
 		{
