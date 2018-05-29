@@ -27,16 +27,14 @@ namespace Database
 
 		public static List<DCEvents> GenerateEventSeedScriptObjects()
 		{
-			var eventDate = DateTime.Now.ToString("MM/dd/yyyy");
-
 			return new List<DCEvents>
 			{
-				new DCEvents{Name="GudiPadwa",EventDateTime= "04/08/2018",EventIcon=""},
-				new DCEvents{Name="Picnic",EventDateTime= "06/16/2018",EventIcon=""},
-				new DCEvents{Name="International Yoga Day",EventDateTime= "06/21/2018",EventIcon=""},
-				new DCEvents{Name="Ganapati",EventDateTime= "09/16/2018",EventIcon=""},
-				new DCEvents{Name="Diwali",EventDateTime= "11/17/2018",EventIcon=""},
-				new DCEvents{Name="Workshops",EventDateTime= "Date yet to be finalised",EventIcon=""}
+				new DCEvents{Name= StringResources.Events.GudiPadva,EventDateTime= StringResources.Events.GudiPadva_Date},
+				new DCEvents{Name=StringResources.Events.Picnic,EventDateTime= StringResources.Events.Picnic_Date},
+				new DCEvents{Name=StringResources.Events.YogaDay,EventDateTime= StringResources.Events.YogaDay_Date},
+				new DCEvents{Name=StringResources.Events.Ganapati,EventDateTime= StringResources.Events.Ganapati_Date},
+				new DCEvents{Name=StringResources.Events.Diwali,EventDateTime= StringResources.Events.Diwali_Date},
+				new DCEvents{Name=StringResources.Events.Workshops,EventDateTime= StringResources.Events.Workshops_Date}
 
 			};
 		}
