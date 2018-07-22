@@ -1,0 +1,11 @@
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/NMMEvent/bin/Release/netstandard2.0/NMMEvent.deps.json
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/NMMEvent/bin/Release/netstandard2.0/NMMEvent.dll
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/NMMEvent/bin/Release/netstandard2.0/NMMEvent.pdb
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/NMMEvent/bin/Release/netstandard2.0/Database.dll
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/NMMEvent/bin/Release/netstandard2.0/Database.pdb
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/NMMEvent/obj/Release/netstandard2.0/NMMEvent.csprojResolveAssemblyReference.cache
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/NMMEvent/obj/Release/netstandard2.0/NMMEvent.csproj.CoreCompileInputs.cache
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/NMMEvent/obj/Release/netstandard2.0/NMMEvent.AssemblyInfoInputs.cache
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/NMMEvent/obj/Release/netstandard2.0/NMMEvent.AssemblyInfo.cs
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/NMMEvent/obj/Release/netstandard2.0/NMMEvent.dll
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/NMMEvent/obj/Release/netstandard2.0/NMMEvent.pdb

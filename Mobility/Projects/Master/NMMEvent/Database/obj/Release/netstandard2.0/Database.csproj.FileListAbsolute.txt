@@ -1,0 +1,8 @@
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/Database/bin/Release/netstandard2.0/Database.deps.json
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/Database/bin/Release/netstandard2.0/Database.dll
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/Database/bin/Release/netstandard2.0/Database.pdb
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/Database/obj/Release/netstandard2.0/Database.csproj.CoreCompileInputs.cache
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/Database/obj/Release/netstandard2.0/Database.AssemblyInfoInputs.cache
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/Database/obj/Release/netstandard2.0/Database.AssemblyInfo.cs
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/Database/obj/Release/netstandard2.0/Database.dll
+/Users/ravirdixit/Documents/GitHub/NMMWebSite/Mobility/Projects/Master/NMMEvent/Database/obj/Release/netstandard2.0/Database.pdb
